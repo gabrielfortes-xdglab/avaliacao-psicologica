@@ -43,7 +43,7 @@ Lista de `{id, texto}`. São as hipóteses que o plano precisa cobrir. Os ids s�
 - `opcoes`: lista de procedimentos disponíveis. Cada um com:
   - `id`, `rotulo`
   - `tipo`: `entrevista`, `observacao`, `instrumento`, `fonte_complementar`
-  - `sessoes` (número)
+  - `sessoes` (número; aceita 0.5 para instrumentos breves que dividem uma sessão)
   - `informa` (lista de ids de hipóteses)
   - `adequada` (booleano) e `comentario` (por que sim ou por que não)
 - `plano_referencia` (lista de ids de opções) e `justificativa_referencia`.
@@ -55,7 +55,7 @@ Lista de `{id, texto}`. São as hipóteses que o plano precisa cobrir. Os ids s�
 - `no_inicial` (id do primeiro nó).
 - `nos`: objeto em que cada chave é um id de nó, com:
   - `fala`: o que o informante diz ao chegar nesse nó
-  - `opcoes`: lista de perguntas possíveis, cada uma com `pergunta`, `tipo` (`aberta`, `fechada`, `indutiva`), `revela` (lista de ids de informações), `vai_para` (id do próximo nó ou `"fim"`) e `comentario` (opcional, mostrado no relatório final)
+  - `opcoes`: lista de perguntas possíveis, cada uma com `pergunta`, `tipo` (`aberta`, `fechada`, `indutiva`), `revela` (lista de ids de informações), `vai_para` (id do próximo nó ou `"fim"`), `resposta` (opcional: o que o informante responde a essa pergunta, mostrado antes da fala do próximo nó) e `comentario` (opcional, mostrado no relatório final)
 
 Regras: todo `vai_para` aponta para nó existente ou `"fim"`; toda informação essencial é alcançável por pelo menos um caminho; nenhum caminho passa de 15 perguntas.
 

@@ -1,0 +1,696 @@
+{
+  "id": "caso-01",
+  "titulo": "Dificuldade para concluir tarefas na universidade",
+  "ficticio": true,
+  "contexto": "clinico",
+  "faixa_etaria": "adulto",
+  "versao": "0.1",
+  "atualizado_em": "2026-11-14",
+  "revisado_por": null,
+  "etapas": ["demanda", "planejamento", "anamnese", "resultados", "integracao"],
+
+  "demanda": {
+    "solicitante": "A própria avaliada, por procura espontânea na clínica-escola",
+    "texto": "L., 23 anos, estudante do 6º período de um curso de graduação. Procurou a clínica-escola porque não consegue terminar as tarefas do curso, atrasa entregas e perde o fio das leituras. Diz que se reconheceu em vídeos sobre TDAH e que respondeu a um teste na internet com resultado \"alto\". Quer saber se tem o transtorno.",
+    "pergunta_de_avaliacao": "As dificuldades de atenção e de conclusão de tarefas relatadas por L. são compatíveis com TDAH ou são mais bem explicadas por outra condição ou pelas circunstâncias atuais?"
+  },
+
+  "hipoteses": [
+    { "id": "h1", "texto": "Transtorno de déficit de atenção/hiperatividade (TDAH)" },
+    { "id": "h2", "texto": "Sintomas de ansiedade que interferem na atenção" },
+    { "id": "h3", "texto": "Humor deprimido que reduz energia e concentração" },
+    { "id": "h4", "texto": "Estresse, sobrecarga de rotina e sono insuficiente" },
+    { "id": "h5", "texto": "Rebaixamento intelectual que dificulta acompanhar o curso" }
+  ],
+
+  "planejamento": {
+    "limite_sessoes": 6,
+    "opcoes": [
+      {
+        "id": "p1",
+        "rotulo": "Entrevista de anamnese com L.",
+        "tipo": "entrevista",
+        "sessoes": 1,
+        "informa": ["h1", "h2", "h3", "h4", "h5"],
+        "adequada": true,
+        "comentario": "Fornece a história das dificuldades, os contextos em que aparecem, a rotina, o sono e o humor. Os escores dos instrumentos só podem ser interpretados à luz dessas informações."
+      },
+      {
+        "id": "p2",
+        "rotulo": "Entrevista com a mãe sobre a infância de L.",
+        "tipo": "entrevista",
+        "sessoes": 1,
+        "informa": ["h1"],
+        "adequada": true,
+        "comentario": "A hipótese de TDAH depende de saber se as dificuldades já existiam na infância. O relato da própria L. sobre esse período pode estar influenciado pelo que ela leu e assistiu. Uma segunda fonte reduz esse risco."
+      },
+      {
+        "id": "p3",
+        "rotulo": "Escala Fictícia de Desatenção e Hiperatividade em Adultos (EFDH)",
+        "tipo": "instrumento",
+        "sessoes": 0.5,
+        "informa": ["h1"],
+        "adequada": true,
+        "comentario": "Organiza a queixa em medidas comparáveis com uma amostra normativa. É um autorrelato: mostra quanto L. percebe os sintomas, e precisa ser lido junto com as outras fontes."
+      },
+      {
+        "id": "p4",
+        "rotulo": "Bateria Fictícia de Atenção (BFAT)",
+        "tipo": "instrumento",
+        "sessoes": 1,
+        "informa": ["h1"],
+        "adequada": true,
+        "comentario": "Mede o desempenho em tarefas de atenção concentrada, dividida e alternada. Acrescenta uma medida de desempenho ao relato de L., que é a única fonte da queixa até aqui."
+      },
+      {
+        "id": "p5",
+        "rotulo": "Inventário Fictício de Ansiedade (IFAN)",
+        "tipo": "instrumento",
+        "sessoes": 0.5,
+        "informa": ["h2"],
+        "adequada": true,
+        "comentario": "A ansiedade também produz queixa de desatenção. Sem uma fonte para essa hipótese, o plano só consegue confirmar ou negar TDAH e deixa a explicação concorrente sem dado."
+      },
+      {
+        "id": "p6",
+        "rotulo": "Escala Fictícia de Humor Deprimido (EFHD)",
+        "tipo": "instrumento",
+        "sessoes": 0.5,
+        "informa": ["h3"],
+        "adequada": true,
+        "comentario": "Aplicação breve, que permite manter ou afastar a hipótese de humor deprimido com mais de uma fonte, além da entrevista."
+      },
+      {
+        "id": "p7",
+        "rotulo": "Inventário Fictício de Estresse (IFE)",
+        "tipo": "instrumento",
+        "sessoes": 0.5,
+        "informa": ["h4"],
+        "adequada": true,
+        "comentario": "L. relata rotina carregada. O inventário informa se há sintomas de estresse acima do esperado, o que pesa na hipótese de sobrecarga."
+      },
+      {
+        "id": "p8",
+        "rotulo": "Teste Fictício de Raciocínio Não Verbal (TFRN)",
+        "tipo": "instrumento",
+        "sessoes": 1,
+        "informa": ["h5"],
+        "adequada": true,
+        "comentario": "A história escolar já torna a hipótese de rebaixamento intelectual pouco provável. Um teste breve permite afastá-la com dado, em vez de apenas supor."
+      },
+      {
+        "id": "p9",
+        "rotulo": "Inventário Fictício de Personalidade (IFP)",
+        "tipo": "instrumento",
+        "sessoes": 1,
+        "informa": [],
+        "adequada": false,
+        "comentario": "Descreve traços de personalidade, que nenhuma das hipóteses do caso exige investigar. Ocupa uma sessão e não ajuda a responder à pergunta de avaliação."
+      },
+      {
+        "id": "p10",
+        "rotulo": "Técnica gráfica projetiva fictícia (desenho temático)",
+        "tipo": "instrumento",
+        "sessoes": 1,
+        "informa": [],
+        "adequada": false,
+        "comentario": "Não fornece informação sobre atenção, ansiedade, humor, estresse ou raciocínio de forma que responda à pergunta de avaliação. A escolha do procedimento parte da pergunta, e não da disponibilidade do material."
+      }
+    ],
+    "plano_referencia": ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"],
+    "justificativa_referencia": "O plano ocupa as seis sessões e dá a cada hipótese pelo menos duas fontes. A hipótese de TDAH recebe quatro (relato de L., relato da mãe, escala de sintomas e bateria de atenção), porque é a pergunta central e porque autorrelato e desempenho podem divergir. Os três inventários breves cabem em uma sessão e meia e cobrem as explicações concorrentes."
+  },
+
+  "anamnese": {
+    "informante": "L., a própria avaliada",
+    "informacoes": [
+      { "id": "i1", "texto": "As dificuldades ficaram evidentes no 5º período, quando L. começou o estágio de manhã e passou a trabalhar à noite", "essencial": true },
+      { "id": "i2", "texto": "No ensino fundamental e no médio, tinha boas notas, entregava os trabalhos e não havia queixas de professores", "essencial": true },
+      { "id": "i3", "texto": "O prejuízo aparece nas tarefas do curso. No trabalho, em uma loja, L. dá conta das tarefas e não recebe reclamações", "essencial": true },
+      { "id": "i4", "texto": "Dorme cerca de cinco horas por noite durante a semana", "essencial": true },
+      { "id": "i5", "texto": "Toma de quatro a cinco xícaras de café por dia e bebida energética em semana de prova", "essencial": true },
+      { "id": "i6", "texto": "Preocupa-se o tempo todo com o desempenho, tem dificuldade de parar de pensar nas pendências à noite e sente tensão no corpo", "essencial": true },
+      { "id": "i7", "texto": "Não relata tristeza persistente nem perda de interesse. Nos fins de semana, mantém atividades de que gosta", "essencial": true },
+      { "id": "i8", "texto": "Um primo recebeu diagnóstico de TDAH na infância", "essencial": false },
+      { "id": "i9", "texto": "A mãe acompanhou toda a vida escolar de L., e L. autoriza que ela seja entrevistada", "essencial": false },
+      { "id": "i10", "texto": "Nas férias, quando dorme mais e não trabalha, L. consegue ler por longos períodos e concluir o que começa", "essencial": true },
+      { "id": "i11", "texto": "Não usa medicamentos nem outras substâncias e nunca passou por avaliação psicológica ou psiquiátrica", "essencial": false },
+      { "id": "i12", "texto": "Espera sair da avaliação com um diagnóstico de TDAH para procurar tratamento medicamentoso", "essencial": false },
+      { "id": "i13", "texto": "Já tentou agenda, aplicativos de organização e blocos de tempo para estudar", "essencial": false }
+    ],
+    "no_inicial": "n1",
+    "nos": {
+      "n1": {
+        "fala": "Eu vim porque acho que tenho TDAH. Não consigo terminar nada da faculdade. Começo um trabalho e, quando vejo, estou no celular. Vi uns vídeos e parecia que estavam falando de mim.",
+        "opcoes": [
+          {
+            "pergunta": "Conte um exemplo recente de como isso acontece no seu dia a dia.",
+            "tipo": "aberta",
+            "resposta": "Semana passada eu tinha um relatório de estágio. Sentei três noites para fazer e não saiu. Agora, engraçado, na loja onde eu trabalho eu faço tudo certinho, fecho o caixa, ninguém reclama. É na faculdade que eu travo.",
+            "revela": ["i3"],
+            "vai_para": "n2"
+          },
+          {
+            "pergunta": "Há quanto tempo você percebe essa dificuldade?",
+            "tipo": "fechada",
+            "resposta": "Faz mais ou menos um ano. Foi no 5º período, quando eu peguei o estágio de manhã e comecei a trabalhar à noite.",
+            "revela": ["i1"],
+            "vai_para": "n2"
+          },
+          {
+            "pergunta": "Então você se distrai com qualquer coisa?",
+            "tipo": "indutiva",
+            "resposta": "É, com qualquer coisa.",
+            "revela": [],
+            "vai_para": "n2",
+            "comentario": "A pergunta entrega a descrição pronta, e L. só concorda. Você fica sem saber como a distração acontece, em que tarefas e em que lugares."
+          }
+        ]
+      },
+      "n2": {
+        "fala": "De um tempo para cá piorou muito.",
+        "opcoes": [
+          {
+            "pergunta": "O que mudou na sua rotina na época em que piorou?",
+            "tipo": "aberta",
+            "resposta": "Mudou tudo. No 5º período eu comecei o estágio de manhã, e logo depois arrumei o emprego à noite. Antes disso eu só estudava. Foi aí que os trabalhos começaram a atrasar.",
+            "revela": ["i1"],
+            "vai_para": "n3"
+          },
+          {
+            "pergunta": "Piorou neste ano?",
+            "tipo": "fechada",
+            "resposta": "Do ano passado para cá.",
+            "revela": [],
+            "vai_para": "n3"
+          },
+          {
+            "pergunta": "Mas você sempre foi desatenta, desde criança, certo?",
+            "tipo": "indutiva",
+            "resposta": "Acho que sim. Pensando agora, eu devia ser, só que ninguém percebia.",
+            "revela": [],
+            "vai_para": "n3",
+            "comentario": "A pergunta afirma o que deveria investigar. O início na infância é o ponto que mais pesa na hipótese de TDAH, e a resposta de L. passa a refletir a sugestão do entrevistador e o que ela viu nos vídeos."
+          }
+        ]
+      },
+      "n3": {
+        "fala": "Na escola eu não lembro de isso ser um problema. Mas hoje eu fico pensando se já não era.",
+        "opcoes": [
+          {
+            "pergunta": "Como era sua vida escolar no ensino fundamental e no médio?",
+            "tipo": "aberta",
+            "resposta": "Era tranquila. Eu tirava nota boa, entregava tudo. Nunca chamaram minha mãe na escola por causa de comportamento ou de falta de atenção.",
+            "revela": ["i2"],
+            "vai_para": "n4"
+          },
+          {
+            "pergunta": "Quem poderia contar como você era quando criança?",
+            "tipo": "aberta",
+            "resposta": "Minha mãe. Ela ia a todas as reuniões da escola e guardou meus boletins. Pode falar com ela, por mim tudo bem.",
+            "revela": ["i9"],
+            "vai_para": "n3b"
+          },
+          {
+            "pergunta": "Você repetiu algum ano?",
+            "tipo": "fechada",
+            "resposta": "Não, nunca.",
+            "revela": [],
+            "vai_para": "n4"
+          }
+        ]
+      },
+      "n3b": {
+        "fala": "Minha mãe sempre diz que eu era uma criança sossegada.",
+        "opcoes": [
+          {
+            "pergunta": "E você, o que lembra da escola nessa época?",
+            "tipo": "aberta",
+            "resposta": "Lembro que eu gostava. Tirava nota boa, entregava os trabalhos, os professores não reclamavam de mim.",
+            "revela": ["i2"],
+            "vai_para": "n4"
+          },
+          {
+            "pergunta": "Ela mora na mesma cidade que você?",
+            "tipo": "fechada",
+            "resposta": "Mora, sim.",
+            "revela": [],
+            "vai_para": "n4"
+          }
+        ]
+      },
+      "n4": {
+        "fala": "Hoje o problema maior é a faculdade.",
+        "opcoes": [
+          {
+            "pergunta": "E em outros lugares, como o trabalho e a sua casa, como é?",
+            "tipo": "aberta",
+            "resposta": "No trabalho vai bem. Atendo cliente, fecho o caixa, confiro estoque, e nunca recebi reclamação. Em casa eu quase não paro. O que não anda são as coisas do curso.",
+            "revela": ["i3"],
+            "vai_para": "n5"
+          },
+          {
+            "pergunta": "Você trabalha?",
+            "tipo": "fechada",
+            "resposta": "Trabalho, em uma loja, à noite.",
+            "revela": [],
+            "vai_para": "n5"
+          },
+          {
+            "pergunta": "Imagino que no trabalho isso também atrapalhe bastante, não é?",
+            "tipo": "indutiva",
+            "resposta": "Atrapalha, deve atrapalhar.",
+            "revela": [],
+            "vai_para": "n5",
+            "comentario": "A pergunta supõe o prejuízo no trabalho, e L. concorda sem descrever. Saber se a dificuldade aparece em mais de um contexto é essencial para a hipótese de TDAH, e essa informação ficou comprometida."
+          }
+        ]
+      },
+      "n5": {
+        "fala": "Minha semana é corrida. Saio de casa cedo e volto tarde.",
+        "opcoes": [
+          {
+            "pergunta": "Descreva um dia comum seu, da hora em que acorda até a hora em que dorme.",
+            "tipo": "aberta",
+            "resposta": "Acordo às seis, estágio até meio-dia, aula à tarde, loja das seis às dez. Chego em casa perto das onze e tento estudar. Durmo lá pela uma. Para aguentar, são quatro ou cinco cafés por dia, e energético em semana de prova.",
+            "revela": ["i4", "i5"],
+            "vai_para": "n6"
+          },
+          {
+            "pergunta": "Quantas horas você dorme por noite?",
+            "tipo": "fechada",
+            "resposta": "Umas cinco, durante a semana.",
+            "revela": ["i4"],
+            "vai_para": "n6"
+          },
+          {
+            "pergunta": "Você toma café ou energético?",
+            "tipo": "fechada",
+            "resposta": "Tomo. Quatro ou cinco cafés por dia, e energético quando tem prova.",
+            "revela": ["i5"],
+            "vai_para": "n6"
+          }
+        ]
+      },
+      "n6": {
+        "fala": "À noite eu deito e a cabeça não para.",
+        "opcoes": [
+          {
+            "pergunta": "O que passa pela sua cabeça nessas horas?",
+            "tipo": "aberta",
+            "resposta": "Tudo o que eu não fiz. O relatório atrasado, a prova, o medo de reprovar e perder o estágio. Fico com o ombro duro, o maxilar travado. Durante o dia é a mesma coisa, estou sempre pensando no que falta.",
+            "revela": ["i6"],
+            "vai_para": "n7"
+          },
+          {
+            "pergunta": "Você se considera uma pessoa ansiosa?",
+            "tipo": "fechada",
+            "resposta": "Acho que sim. Mas todo mundo é, não é?",
+            "revela": [],
+            "vai_para": "n7"
+          },
+          {
+            "pergunta": "Isso é a mente acelerada do TDAH, você não acha?",
+            "tipo": "indutiva",
+            "resposta": "É isso! Foi exatamente o que eu vi no vídeo.",
+            "revela": [],
+            "vai_para": "n7",
+            "comentario": "O entrevistador interpreta o relato antes de conhecer o conteúdo dos pensamentos. Preocupação com pendências e medo de reprovar apontam para outra hipótese, e essa informação deixou de ser coletada."
+          }
+        ]
+      },
+      "n7": {
+        "fala": "Tem semana em que eu fico bem desanimada com tudo isso.",
+        "opcoes": [
+          {
+            "pergunta": "Como têm estado o seu ânimo e o seu interesse pelas coisas de que você gosta?",
+            "tipo": "aberta",
+            "resposta": "O desânimo é com a faculdade, quando vejo o tanto de coisa atrasada. Fora isso eu estou bem. No fim de semana eu saio com as minhas amigas, vou à praia, assisto às minhas séries. Não fico triste o tempo todo, não.",
+            "revela": ["i7"],
+            "vai_para": "n8"
+          },
+          {
+            "pergunta": "Você tem chorado com frequência?",
+            "tipo": "fechada",
+            "resposta": "Não. Chorei um dia de raiva, por causa do relatório.",
+            "revela": [],
+            "vai_para": "n8"
+          }
+        ]
+      },
+      "n8": {
+        "fala": "Eu já tentei de tudo para me organizar.",
+        "opcoes": [
+          {
+            "pergunta": "Em que períodos ou situações as dificuldades diminuem?",
+            "tipo": "aberta",
+            "resposta": "Nas férias. Em janeiro eu não estava trabalhando, dormia bem, e li dois livros inteiros. Terminei um curso online que estava parado. Voltaram as aulas e o trabalho, voltou tudo.",
+            "revela": ["i10"],
+            "vai_para": "n9"
+          },
+          {
+            "pergunta": "O que você já tentou, e como foi?",
+            "tipo": "aberta",
+            "resposta": "Agenda, aplicativo de tarefas, estudar em blocos de 25 minutos. Nas férias funcionou muito bem, eu lia por horas e terminava o que começava. Durante o semestre, com o trabalho e o sono atrasado, nada disso se sustenta.",
+            "revela": ["i13", "i10"],
+            "vai_para": "n9"
+          },
+          {
+            "pergunta": "Essas tentativas funcionaram?",
+            "tipo": "fechada",
+            "resposta": "Não muito.",
+            "revela": [],
+            "vai_para": "n9"
+          }
+        ]
+      },
+      "n9": {
+        "fala": "Fora isso, de saúde eu acho que estou bem.",
+        "opcoes": [
+          {
+            "pergunta": "Fale um pouco da sua saúde: tratamentos, medicamentos ou outras substâncias que você use.",
+            "tipo": "aberta",
+            "resposta": "Não tomo nenhum remédio. Não bebo quase nada e não uso mais nada. Também nunca fui a psicólogo nem a psiquiatra, esta é a primeira vez.",
+            "revela": ["i11"],
+            "vai_para": "n10"
+          },
+          {
+            "pergunta": "Alguém da sua família tem diagnóstico de TDAH?",
+            "tipo": "fechada",
+            "resposta": "Um primo meu. Ele foi diagnosticado quando era criança.",
+            "revela": ["i8"],
+            "vai_para": "n10"
+          }
+        ]
+      },
+      "n10": {
+        "fala": "Eu queria muito resolver isso logo.",
+        "opcoes": [
+          {
+            "pergunta": "O que você espera desta avaliação?",
+            "tipo": "aberta",
+            "resposta": "Sendo sincera, eu espero o diagnóstico. Uma colega começou a tomar remédio para TDAH e disse que mudou a vida dela. Eu queria o laudo para procurar um médico.",
+            "revela": ["i12"],
+            "vai_para": "n11"
+          },
+          {
+            "pergunta": "Você já passou por alguma avaliação ou tratamento antes?",
+            "tipo": "fechada",
+            "resposta": "Nunca. Também não tomo nenhum remédio nem uso outra coisa.",
+            "revela": ["i11"],
+            "vai_para": "n11"
+          },
+          {
+            "pergunta": "Com o laudo você já vai poder começar o remédio, é isso que você quer?",
+            "tipo": "indutiva",
+            "resposta": "Isso, é isso mesmo.",
+            "revela": [],
+            "vai_para": "n11",
+            "comentario": "A pergunta antecipa o resultado da avaliação e reforça a expectativa de um diagnóstico. A expectativa de L. importa, mas precisa aparecer nas palavras dela, sem que o entrevistador prometa um desfecho."
+          }
+        ]
+      },
+      "n11": {
+        "fala": "Tem mais alguma coisa que eu precise fazer?",
+        "opcoes": [
+          {
+            "pergunta": "Há algo importante sobre você que eu não perguntei?",
+            "tipo": "aberta",
+            "resposta": "Acho que só que tem um caso na família. Um primo meu foi diagnosticado com TDAH quando era criança.",
+            "revela": ["i8"],
+            "vai_para": "fim"
+          },
+          {
+            "pergunta": "Você autoriza que eu converse com alguém que acompanhou a sua infância?",
+            "tipo": "fechada",
+            "resposta": "Autorizo. Pode ser a minha mãe, ela acompanhou toda a minha vida escolar.",
+            "revela": ["i9"],
+            "vai_para": "fim"
+          }
+        ]
+      }
+    }
+  },
+
+  "resultados": {
+    "instrumentos": [
+      {
+        "nome": "Escala Fictícia de Desatenção e Hiperatividade em Adultos (EFDH)",
+        "ficticio": true,
+        "construto": "Sintomas de desatenção e de hiperatividade relatados pela própria pessoa",
+        "metrica": "Escore T, média 50, desvio padrão 10",
+        "medidas": [
+          { "id": "m1", "rotulo": "Desatenção (autorrelato)", "bruto": 41, "percentil": 96, "escore_padrao": 68, "ic95": [62, 74], "faixa": "Elevado" },
+          { "id": "m2", "rotulo": "Hiperatividade e impulsividade (autorrelato)", "bruto": 19, "percentil": 66, "escore_padrao": 54, "ic95": [47, 61], "faixa": "Médio" }
+        ]
+      },
+      {
+        "nome": "Bateria Fictícia de Atenção (BFAT)",
+        "ficticio": true,
+        "construto": "Desempenho em tarefas de atenção",
+        "metrica": "Escore padrão, média 100, desvio padrão 15",
+        "medidas": [
+          { "id": "m3", "rotulo": "Atenção concentrada", "bruto": 87, "percentil": 45, "escore_padrao": 98, "ic95": [90, 106], "faixa": "Média" },
+          { "id": "m4", "rotulo": "Atenção dividida", "bruto": 64, "percentil": 30, "escore_padrao": 92, "ic95": [84, 100], "faixa": "Média" },
+          { "id": "m5", "rotulo": "Atenção alternada", "bruto": 95, "percentil": 61, "escore_padrao": 104, "ic95": [96, 112], "faixa": "Média" }
+        ]
+      },
+      {
+        "nome": "Inventário Fictício de Ansiedade (IFAN)",
+        "ficticio": true,
+        "construto": "Sintomas de ansiedade",
+        "metrica": "Escore T, média 50, desvio padrão 10",
+        "medidas": [
+          { "id": "m6", "rotulo": "Ansiedade", "bruto": 27, "percentil": 95, "escore_padrao": 66, "ic95": [61, 71], "faixa": "Elevado" }
+        ]
+      },
+      {
+        "nome": "Escala Fictícia de Humor Deprimido (EFHD)",
+        "ficticio": true,
+        "construto": "Sintomas depressivos",
+        "metrica": "Escore T, média 50, desvio padrão 10",
+        "medidas": [
+          { "id": "m7", "rotulo": "Humor deprimido", "bruto": 14, "percentil": 58, "escore_padrao": 52, "ic95": [46, 58], "faixa": "Médio" }
+        ]
+      },
+      {
+        "nome": "Inventário Fictício de Estresse (IFE)",
+        "ficticio": true,
+        "construto": "Sintomas de estresse",
+        "metrica": "Escore T, média 50, desvio padrão 10",
+        "medidas": [
+          { "id": "m8", "rotulo": "Estresse", "bruto": 33, "percentil": 93, "escore_padrao": 65, "ic95": [59, 71], "faixa": "Elevado" }
+        ]
+      },
+      {
+        "nome": "Teste Fictício de Raciocínio Não Verbal (TFRN)",
+        "ficticio": true,
+        "construto": "Raciocínio não verbal",
+        "metrica": "Escore padrão, média 100, desvio padrão 15",
+        "medidas": [
+          { "id": "m9", "rotulo": "Raciocínio não verbal", "bruto": 25, "percentil": 58, "escore_padrao": 103, "ic95": [95, 111], "faixa": "Média" }
+        ]
+      }
+    ],
+    "questoes": [
+      {
+        "medida": "m1",
+        "enunciado": "L. obteve escore T 68 em desatenção, em uma escala de autorrelato. O que esse resultado permite afirmar?",
+        "alternativas": [
+          {
+            "texto": "L. relata mais sintomas de desatenção do que a maior parte da amostra normativa, cerca de 1,8 desvio padrão acima da média.",
+            "correta": true,
+            "erro_tipico": null,
+            "comentario": "O escore T tem média 50 e desvio padrão 10. Um T de 68 fica 18 pontos acima da média, e descreve quanto L. percebe e relata os sintomas."
+          },
+          {
+            "texto": "L. tem TDAH, já que o escore está na faixa elevada.",
+            "correta": false,
+            "erro_tipico": "limitrofe_como_diagnostico",
+            "comentario": "A faixa descreve a posição do escore de autorrelato. O diagnóstico depende de integrar esse dado com a história na infância, o prejuízo em mais de um contexto e as outras fontes."
+          },
+          {
+            "texto": "L. apresenta 68% dos sintomas de desatenção.",
+            "correta": false,
+            "erro_tipico": "percentil_como_acerto",
+            "comentario": "O escore T é um escore padrão e não uma porcentagem. Ele informa a distância em relação à média da amostra normativa."
+          },
+          {
+            "texto": "A desatenção é a causa dos atrasos de L. no curso.",
+            "correta": false,
+            "erro_tipico": "inferencia_causal",
+            "comentario": "O escore descreve o relato de L. em um momento. Ele não mostra o que produz os atrasos, e a anamnese traz outras explicações possíveis, como sono e sobrecarga."
+          }
+        ]
+      },
+      {
+        "medida": "m1",
+        "comparar": "m3",
+        "enunciado": "Em desatenção (autorrelato), L. obteve T 68. Em atenção concentrada (tarefa de desempenho), obteve escore padrão 98. Como ler os dois resultados juntos?",
+        "alternativas": [
+          {
+            "texto": "O relato de sintomas está bem acima da média, e o desempenho na tarefa está na média. Os dois medem coisas diferentes, e a divergência precisa ser explicada na integração.",
+            "correta": true,
+            "erro_tipico": null,
+            "comentario": "Convertidos para a mesma unidade, o T 68 fica 1,8 desvio padrão acima da média, e o escore padrão 98 fica praticamente na média. Um mede a queixa percebida, o outro o desempenho em situação estruturada."
+          },
+          {
+            "texto": "Como 98 é maior que 68, a atenção medida pela bateria é mais alta que a desatenção relatada.",
+            "correta": false,
+            "erro_tipico": "metricas_diferentes",
+            "comentario": "Os números estão em escalas diferentes (média 50 e desvio padrão 10 em uma, média 100 e desvio padrão 15 na outra). Só é possível compará-los depois de converter para a mesma unidade."
+          },
+          {
+            "texto": "O desempenho médio na bateria mostra que L. não tem dificuldade de atenção no dia a dia.",
+            "correta": false,
+            "erro_tipico": "construto_nao_medido",
+            "comentario": "A bateria mede o desempenho em tarefas curtas, em sala silenciosa e com instrução clara. Ela não mede a atenção em tarefas longas do cotidiano, que é o conteúdo da queixa."
+          },
+          {
+            "texto": "A bateria está errada, porque o autorrelato elevado já indica o déficit.",
+            "correta": false,
+            "erro_tipico": "limitrofe_como_diagnostico",
+            "comentario": "Um escore elevado de autorrelato não estabelece um déficit nem invalida outra medida. As duas informações são dados a integrar."
+          }
+        ]
+      },
+      {
+        "medida": "m4",
+        "comparar": "m5",
+        "enunciado": "L. obteve escore padrão 92 em atenção dividida (IC 95%: 84 a 100) e 104 em atenção alternada (IC 95%: 96 a 112). A diferença de 12 pontos indica um déficit específico em atenção dividida?",
+        "alternativas": [
+          {
+            "texto": "Não. Os dois escores estão na faixa média e os intervalos de confiança se sobrepõem, então a diferença pode decorrer do erro de medida.",
+            "correta": true,
+            "erro_tipico": null,
+            "comentario": "Os intervalos compartilham a faixa de 96 a 100. Uma diferença desse tamanho não sustenta, sozinha, a afirmação de que uma habilidade é mais fraca que a outra."
+          },
+          {
+            "texto": "Sim. Doze pontos de diferença mostram que a atenção dividida é o ponto fraco de L.",
+            "correta": false,
+            "erro_tipico": "ignora_erro_medida",
+            "comentario": "A afirmação trata os dois escores como valores exatos. Com os intervalos de confiança, a diferença deixa de ser clara."
+          },
+          {
+            "texto": "Sim. O percentil 30 em atenção dividida já caracteriza um déficit.",
+            "correta": false,
+            "erro_tipico": "limitrofe_como_diagnostico",
+            "comentario": "O percentil 30 está dentro da faixa média do instrumento. Ele descreve uma posição na amostra normativa e não caracteriza déficit."
+          }
+        ]
+      },
+      {
+        "medida": "m6",
+        "enunciado": "No inventário de ansiedade, L. obteve escore T 66 (IC 95%: 61 a 71). Qual interpretação é adequada?",
+        "alternativas": [
+          {
+            "texto": "L. relata sintomas de ansiedade acima da média da amostra normativa, o que mantém essa hipótese em investigação junto com a entrevista.",
+            "correta": true,
+            "erro_tipico": null,
+            "comentario": "O escore e todo o intervalo de confiança ficam acima da média. O resultado dá peso à hipótese e precisa ser lido com o conteúdo das preocupações relatadas na anamnese."
+          },
+          {
+            "texto": "O resultado confirma um transtorno de ansiedade.",
+            "correta": false,
+            "erro_tipico": "limitrofe_como_diagnostico",
+            "comentario": "Um inventário de sintomas indica intensidade de relato. O diagnóstico exige avaliar duração, prejuízo e contexto, com outras fontes."
+          },
+          {
+            "texto": "A ansiedade é o que causa a desatenção de L.",
+            "correta": false,
+            "erro_tipico": "inferencia_causal",
+            "comentario": "O escore mostra que os sintomas estão presentes. A relação entre ansiedade e queixa de atenção é uma hipótese a sustentar na integração, com a história e as demais fontes."
+          },
+          {
+            "texto": "O resultado mostra que L. tem dificuldade para dormir.",
+            "correta": false,
+            "erro_tipico": "construto_nao_medido",
+            "comentario": "O inventário mede sintomas de ansiedade. A informação sobre o sono vem da anamnese."
+          }
+        ]
+      },
+      {
+        "medida": "m7",
+        "enunciado": "Na escala de humor deprimido, L. obteve escore T 52 (IC 95%: 46 a 58). Qual leitura é adequada?",
+        "alternativas": [
+          {
+            "texto": "O relato de sintomas depressivos está na média da amostra normativa, o que, junto com a entrevista, enfraquece essa hipótese no momento.",
+            "correta": true,
+            "erro_tipico": null,
+            "comentario": "O intervalo de confiança inclui a média 50. O resultado concorda com a anamnese, em que L. não relata tristeza persistente nem perda de interesse."
+          },
+          {
+            "texto": "L. está levemente deprimida, pois o escore ficou 2 pontos acima da média.",
+            "correta": false,
+            "erro_tipico": "ignora_erro_medida",
+            "comentario": "Dois pontos cabem com folga no erro de medida. O intervalo de 46 a 58 inclui a média, e a diferença não tem significado."
+          },
+          {
+            "texto": "L. tem 52% de probabilidade de estar com depressão.",
+            "correta": false,
+            "erro_tipico": "percentil_como_acerto",
+            "comentario": "O escore T não é porcentagem nem probabilidade. Um T de 52 fica muito próximo da média da amostra normativa."
+          }
+        ]
+      },
+      {
+        "medida": "m9",
+        "enunciado": "No teste de raciocínio não verbal, L. obteve escore padrão 103, percentil 58. O que esse resultado informa?",
+        "alternativas": [
+          {
+            "texto": "O desempenho de L. foi igual ou superior ao de 58% da amostra normativa, dentro da faixa média, o que não sustenta a hipótese de rebaixamento intelectual.",
+            "correta": true,
+            "erro_tipico": null,
+            "comentario": "O percentil indica posição em relação à amostra normativa. O resultado concorda com a história escolar relatada."
+          },
+          {
+            "texto": "L. acertou 58% dos itens do teste.",
+            "correta": false,
+            "erro_tipico": "percentil_como_acerto",
+            "comentario": "O percentil não informa a proporção de acertos. Essa informação está no escore bruto."
+          },
+          {
+            "texto": "Como o raciocínio está na média, a atenção de L. também está preservada.",
+            "correta": false,
+            "erro_tipico": "construto_nao_medido",
+            "comentario": "O teste mede raciocínio não verbal. Conclusões sobre atenção precisam das medidas de atenção e das outras fontes."
+          }
+        ]
+      }
+    ]
+  },
+
+  "integracao": {
+    "fontes": [
+      { "id": "f1", "origem": "Anamnese com L.", "achado": "Dificuldades evidentes a partir do 5º período, com estágio e trabalho noturno. Boa vida escolar anterior. Prejuízo concentrado no curso. Cinco horas de sono, consumo alto de cafeína, preocupação constante com o desempenho. Melhora nas férias." },
+      { "id": "f2", "origem": "Entrevista com a mãe", "achado": "Descreve L. como criança tranquila e organizada, sem queixas de professores. Os boletins que guardou não registram observações sobre atenção ou comportamento." },
+      { "id": "f3", "origem": "EFDH (autorrelato de sintomas)", "achado": "Desatenção elevada (T 68). Hiperatividade e impulsividade na média (T 54)." },
+      { "id": "f4", "origem": "BFAT (bateria de atenção)", "achado": "Atenção concentrada, dividida e alternada na faixa média." },
+      { "id": "f5", "origem": "IFAN (ansiedade)", "achado": "Sintomas de ansiedade elevados (T 66)." },
+      { "id": "f6", "origem": "IFE (estresse)", "achado": "Sintomas de estresse elevados (T 65)." },
+      { "id": "f7", "origem": "EFHD (humor deprimido)", "achado": "Sintomas depressivos na média (T 52)." },
+      { "id": "f8", "origem": "TFRN (raciocínio não verbal)", "achado": "Desempenho na faixa média (escore padrão 103)." }
+    ],
+    "convergencias": [
+      { "fontes": ["f1", "f2"], "hipotese": "h1", "comentario": "L. e a mãe descrevem uma infância sem sinais de desatenção ou de hiperatividade. As duas fontes convergem contra o início precoce, que a hipótese de TDAH exige." },
+      { "fontes": ["f1", "f5"], "hipotese": "h2", "comentario": "A preocupação constante com o desempenho e a tensão relatadas na entrevista concordam com o escore elevado no inventário de ansiedade." },
+      { "fontes": ["f1", "f6"], "hipotese": "h4", "comentario": "A rotina com estágio, aulas e trabalho noturno, o sono de cinco horas e a melhora nas férias concordam com o escore elevado de estresse." },
+      { "fontes": ["f1", "f7"], "hipotese": "h3", "comentario": "A entrevista e a escala concordam: não há relato de tristeza persistente nem de perda de interesse, e os sintomas depressivos estão na média." },
+      { "fontes": ["f1", "f8"], "hipotese": "h5", "comentario": "A boa história escolar e o desempenho médio em raciocínio afastam a hipótese de rebaixamento intelectual." }
+    ],
+    "divergencias": [
+      { "fontes": ["f3", "f4"], "hipotese": "h1", "comentario": "L. relata muita desatenção, e o desempenho nas tarefas de atenção está na média. A queixa é real e precisa de explicação. A divergência indica que ela não decorre de uma dificuldade de atenção que apareça em qualquer situação." },
+      { "fontes": ["f3", "f2"], "hipotese": "h1", "comentario": "O autorrelato atual é elevado, e o relato da mãe sobre a infância não traz sintomas. A percepção atual de L. pode refletir o momento de sobrecarga e a identificação com conteúdos sobre TDAH." }
+    ],
+    "conclusao_referencia": "No momento, os dados não sustentam a hipótese de TDAH. Duas fontes descrevem uma infância sem os sintomas, o prejuízo se concentra em um contexto, as dificuldades variam com a carga de trabalho e com o sono, e o desempenho nas tarefas de atenção está na média. O conjunto é mais compatível com sintomas de ansiedade e de estresse associados à sobrecarga de rotina e ao sono insuficiente. A queixa de L. é legítima e pede cuidado: os encaminhamentos de referência são acompanhamento psicológico voltado à ansiedade, orientação sobre sono e rotina, e reavaliação se as dificuldades persistirem depois dessas mudanças.",
+    "limites": "A informação sobre a infância depende da memória de L. e da mãe. A avaliação ocorreu em um período de carga elevada e de pouco sono, o que pode ter influenciado os autorrelatos e o desempenho. A bateria mede a atenção em tarefas curtas e estruturadas, que diferem das tarefas longas do curso. Não houve observação direta de L. em situação de estudo."
+  },
+
+  "trajetoria_referencia": [
+    { "etapa": "demanda", "hipotese": "Cinco hipóteses abertas. L. chega com uma explicação pronta (TDAH), e essa explicação entra como uma hipótese entre as outras." },
+    { "etapa": "planejamento", "hipotese": "O plano precisa de fontes para TDAH (inclusive sobre a infância) e para as explicações concorrentes. Sem isso, a avaliação só conseguiria confirmar a hipótese que L. trouxe." },
+    { "etapa": "anamnese", "hipotese": "O início no 5º período, a boa vida escolar, o prejuízo restrito ao curso e a melhora nas férias enfraquecem TDAH. Sono curto, cafeína e preocupação constante dão peso a ansiedade e a sobrecarga." },
+    { "etapa": "resultados", "hipotese": "Autorrelato de desatenção elevado, com atenção na média nas tarefas. Ansiedade e estresse elevados. Humor e raciocínio na média, o que enfraquece essas duas hipóteses." },
+    { "etapa": "integracao", "hipotese": "TDAH não se sustenta no momento. As dificuldades são mais compatíveis com ansiedade e estresse ligados à sobrecarga e ao sono insuficiente, com reavaliação prevista se persistirem." }
+  ]
+}
