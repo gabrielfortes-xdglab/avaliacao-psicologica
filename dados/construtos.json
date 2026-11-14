@@ -1,0 +1,14 @@
+{
+  "construtos": [
+    {
+      "id": "atencao",
+      "nome": "Atenção",
+      "o_que_se_avalia": "A preencher",
+      "tipos_de_fonte": ["entrevista", "observacao", "instrumento", "relato de terceiros"],
+      "cuidados": ["A preencher"],
+      "erros_de_inferencia": ["A preencher"],
+      "faixas_etarias": ["crianca", "adolescente", "adulto"],
+      "chave_satepsi": "atenção"
+    }
+  ]
+}

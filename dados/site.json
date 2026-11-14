@@ -1,0 +1,98 @@
+{
+  "titulo_aba": "Ferramentas de Avaliação Psicológica: Guia de Estágio",
+  "eyebrow": "Avaliação Psicológica · Guia de estágio",
+  "titulo": "Ferramentas de apoio à avaliação",
+  "subtitulo": "Recursos de estudo e treino para estagiários em Avaliação Psicológica. Escolha uma ferramenta abaixo.",
+  "rodape": [
+    "Material de apoio para supervisão, de uso interno.",
+    "Todos os casos são fictícios. Nenhum material de teste psicológico é reproduzido."
+  ],
+  "textos": {
+    "abrir": "Abrir ferramenta",
+    "voltar": "← Todas as ferramentas",
+    "em_revisao": "Em revisão: este conteúdo ainda não foi conferido por um supervisor de Avaliação Psicológica."
+  },
+  "rotulos_status": {
+    "no_ar": "No ar",
+    "em_desenvolvimento": "Em desenvolvimento"
+  },
+  "grupos": [
+    {
+      "id": "simuladores",
+      "nome": "Simuladores",
+      "descricao": "Treine uma etapa da avaliação por vez, com um caso fictício e comentário a cada escolha.",
+      "ferramentas": [
+        {
+          "id": "planejamento",
+          "nome": "Planejamento de avaliação",
+          "descricao": "Parta da demanda, marque as hipóteses a investigar e escolha os procedimentos dentro de um limite de sessões. Compare com um plano de referência comentado.",
+          "pagina": "ferramentas/planejamento.html",
+          "status": "em_desenvolvimento"
+        },
+        {
+          "id": "anamnese",
+          "nome": "Anamnese ramificada",
+          "descricao": "Conduza uma entrevista escolhendo a próxima pergunta a cada fala do informante. Ao final, veja o que foi coletado, o que ficou de fora e o tipo das perguntas feitas.",
+          "pagina": "ferramentas/anamnese.html",
+          "status": "em_desenvolvimento"
+        },
+        {
+          "id": "escores",
+          "nome": "Interpretação de escores",
+          "descricao": "Leia um perfil de resultados fictício e escolha a frase interpretativa adequada. Cada alternativa errada mostra o erro de leitura que contém.",
+          "pagina": "ferramentas/escores.html",
+          "status": "em_desenvolvimento"
+        }
+      ]
+    },
+    {
+      "id": "conhecimento",
+      "nome": "Banco de conhecimento",
+      "descricao": "Material de consulta para usar durante o estágio e na preparação da supervisão.",
+      "ferramentas": [
+        {
+          "id": "construtos",
+          "nome": "Fichário de construtos",
+          "descricao": "Para cada construto: o que se avalia, que tipos de fonte informam, cuidados e erros comuns de inferência. Lista de instrumentos com a situação no SATEPSI.",
+          "pagina": "ferramentas/construtos.html",
+          "status": "em_desenvolvimento"
+        },
+        {
+          "id": "glossario",
+          "nome": "Glossário psicométrico",
+          "descricao": "Termos de medida com definição curta, uma decisão clínica que depende do conceito e o erro comum de interpretação.",
+          "pagina": "ferramentas/glossario.html",
+          "status": "em_desenvolvimento"
+        },
+        {
+          "id": "documentos",
+          "nome": "Guia de documentos psicológicos",
+          "descricao": "Tipos de documento previstos pelo CFP, com finalidade, estrutura e quando usar. Trechos bem e mal redigidos lado a lado e checklist antes de assinar.",
+          "pagina": "ferramentas/documentos.html",
+          "status": "em_desenvolvimento"
+        }
+      ]
+    },
+    {
+      "id": "casos",
+      "nome": "Estudo de caso",
+      "descricao": "Percorra um caso fictício inteiro ou revise um laudo com problemas plantados.",
+      "ferramentas": [
+        {
+          "id": "caso",
+          "nome": "Casos progressivos",
+          "descricao": "Acompanhe um caso da demanda ao laudo. Registre sua hipótese antes de cada etapa e compare a evolução com uma trajetória de referência. Exporta PDF para a supervisão.",
+          "pagina": "ferramentas/caso.html",
+          "status": "em_desenvolvimento"
+        },
+        {
+          "id": "laudo",
+          "nome": "Laudos com erros",
+          "descricao": "Marque os parágrafos problemáticos de um laudo fictício e classifique o tipo de erro. O gabarito comenta acertos, erros não percebidos e falsos alarmes.",
+          "pagina": "ferramentas/laudo.html",
+          "status": "em_desenvolvimento"
+        }
+      ]
+    }
+  ]
+}

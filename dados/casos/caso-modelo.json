@@ -1,0 +1,214 @@
+{
+  "id": "caso-modelo",
+  "titulo": "Modelo de caso (não publicar)",
+  "ficticio": true,
+  "contexto": "escolar",
+  "faixa_etaria": "crianca",
+  "versao": "0.1",
+  "atualizado_em": "2026-11-14",
+  "revisado_por": null,
+  "etapas": ["demanda", "planejamento", "anamnese", "resultados", "integracao", "laudo"],
+
+  "demanda": {
+    "solicitante": "Coordenação pedagógica de escola pública",
+    "texto": "Menino de 8 anos, 3º ano. A professora relata que ele não termina as atividades, levanta com frequência e está abaixo da turma em leitura.",
+    "pergunta_de_avaliacao": "Que fatores ajudam a explicar as dificuldades de leitura e de permanência nas tarefas, e que encaminhamentos a escola pode adotar?"
+  },
+
+  "hipoteses": [
+    { "id": "h1", "texto": "Dificuldade específica no aprendizado da leitura" },
+    { "id": "h2", "texto": "Dificuldade de atenção sustentada" },
+    { "id": "h3", "texto": "Fatores do contexto familiar ou escolar" }
+  ],
+
+  "planejamento": {
+    "limite_sessoes": 6,
+    "opcoes": [
+      {
+        "id": "p1",
+        "rotulo": "Entrevista de anamnese com o responsável",
+        "tipo": "entrevista",
+        "sessoes": 1,
+        "informa": ["h1", "h2", "h3"],
+        "adequada": true,
+        "comentario": "Fornece história do desenvolvimento, da escolarização e do contexto familiar. Sem ela, os demais dados ficam sem referência."
+      },
+      {
+        "id": "p2",
+        "rotulo": "Observação em sala de aula",
+        "tipo": "observacao",
+        "sessoes": 1,
+        "informa": ["h2", "h3"],
+        "adequada": true,
+        "comentario": "Permite ver o comportamento descrito na queixa no ambiente em que ele ocorre."
+      },
+      {
+        "id": "p3",
+        "rotulo": "Instrumento fictício de leitura (ILF)",
+        "tipo": "instrumento",
+        "sessoes": 1,
+        "informa": ["h1"],
+        "adequada": true,
+        "comentario": "Mede diretamente o desempenho apontado na queixa."
+      },
+      {
+        "id": "p4",
+        "rotulo": "Inventário fictício de personalidade para adultos (IPA)",
+        "tipo": "instrumento",
+        "sessoes": 1,
+        "informa": [],
+        "adequada": false,
+        "comentario": "Instrumento para outra faixa etária e sem relação com a pergunta de avaliação."
+      }
+    ],
+    "plano_referencia": ["p1", "p2", "p3"],
+    "justificativa_referencia": "O plano cobre as três hipóteses com fontes diferentes e cabe no limite de sessões."
+  },
+
+  "anamnese": {
+    "informante": "Mãe",
+    "informacoes": [
+      { "id": "i1", "texto": "Trocou de escola duas vezes nos últimos dois anos", "essencial": true },
+      { "id": "i2", "texto": "Em casa, permanece em jogos de montar por longos períodos", "essencial": true },
+      { "id": "i3", "texto": "Dorme tarde durante a semana", "essencial": false }
+    ],
+    "no_inicial": "n1",
+    "nos": {
+      "n1": {
+        "fala": "A escola me chamou porque ele não fica quieto e não está lendo como os colegas.",
+        "opcoes": [
+          {
+            "pergunta": "Como foi a vida escolar dele até aqui?",
+            "tipo": "aberta",
+            "revela": ["i1"],
+            "vai_para": "n2"
+          },
+          {
+            "pergunta": "Ele é agitado assim em casa também, não é?",
+            "tipo": "indutiva",
+            "revela": [],
+            "vai_para": "n2",
+            "comentario": "A pergunta sugere a resposta. A mãe tende a concordar, e a informação sobre o comportamento em casa fica comprometida."
+          }
+        ]
+      },
+      "n2": {
+        "fala": "Em casa é diferente, depende do que ele está fazendo.",
+        "opcoes": [
+          {
+            "pergunta": "Pode me contar um dia comum dele em casa?",
+            "tipo": "aberta",
+            "revela": ["i2", "i3"],
+            "vai_para": "fim"
+          },
+          {
+            "pergunta": "Ele faz a lição de casa sozinho?",
+            "tipo": "fechada",
+            "revela": [],
+            "vai_para": "fim"
+          }
+        ]
+      }
+    }
+  },
+
+  "resultados": {
+    "instrumentos": [
+      {
+        "nome": "Instrumento de Leitura Fictício (ILF)",
+        "ficticio": true,
+        "construto": "Leitura de palavras",
+        "metrica": "Escore padrão, média 100, desvio padrão 15",
+        "medidas": [
+          {
+            "id": "m1",
+            "rotulo": "Leitura de palavras",
+            "bruto": 22,
+            "percentil": 16,
+            "escore_padrao": 85,
+            "ic95": [78, 92],
+            "faixa": "Média inferior"
+          }
+        ]
+      }
+    ],
+    "questoes": [
+      {
+        "medida": "m1",
+        "enunciado": "Qual frase descreve corretamente o percentil 16?",
+        "alternativas": [
+          {
+            "texto": "O desempenho foi igual ou superior ao de 16% das crianças da amostra normativa.",
+            "correta": true,
+            "erro_tipico": null,
+            "comentario": "Percentil indica posição relativa na amostra normativa."
+          },
+          {
+            "texto": "A criança acertou 16% dos itens.",
+            "correta": false,
+            "erro_tipico": "percentil_como_acerto",
+            "comentario": "Percentil não informa proporção de acertos."
+          },
+          {
+            "texto": "O resultado confirma um transtorno de leitura.",
+            "correta": false,
+            "erro_tipico": "limitrofe_como_diagnostico",
+            "comentario": "Um escore isolado, com intervalo de confiança que alcança a faixa média, não sustenta diagnóstico."
+          }
+        ]
+      }
+    ]
+  },
+
+  "integracao": {
+    "fontes": [
+      { "id": "f1", "origem": "Anamnese", "achado": "Duas trocas de escola; atenção prolongada em atividades de interesse." },
+      { "id": "f2", "origem": "Observação em sala", "achado": "Levanta principalmente durante atividades de leitura." },
+      { "id": "f3", "origem": "ILF", "achado": "Leitura de palavras na média inferior." }
+    ],
+    "convergencias": [
+      { "fontes": ["f2", "f3"], "hipotese": "h1", "comentario": "A agitação se concentra nas tarefas em que o desempenho é mais baixo." }
+    ],
+    "divergencias": [
+      { "fontes": ["f1", "f2"], "hipotese": "h2", "comentario": "A atenção sustentada aparece preservada em casa e reduzida em sala, o que enfraquece a hipótese de dificuldade generalizada de atenção." }
+    ],
+    "conclusao_referencia": "Os dados são mais compatíveis com defasagem em leitura associada à escolarização descontínua do que com dificuldade generalizada de atenção.",
+    "limites": "Uma única observação em sala e ausência de medida de atenção limitam a conclusão sobre h2."
+  },
+
+  "laudo": {
+    "secoes": [
+      {
+        "titulo": "Descrição da demanda",
+        "paragrafos": [
+          {
+            "id": "l1",
+            "texto": "A avaliação foi solicitada pela coordenação pedagógica em razão de dificuldades de leitura e de permanência nas tarefas.",
+            "erro": null
+          }
+        ]
+      },
+      {
+        "titulo": "Conclusão",
+        "paragrafos": [
+          {
+            "id": "l2",
+            "texto": "A criança é desatenta e jamais conseguirá acompanhar a turma sem medicação.",
+            "erro": {
+              "tipo": "linguagem_determinista",
+              "explicacao": "Afirma um prognóstico fixo e indica tratamento fora da competência do documento, sem dado que sustente.",
+              "correcao": "Descrever o que foi observado, em que condições, e indicar encaminhamentos compatíveis com os achados."
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "trajetoria_referencia": [
+    { "etapa": "demanda", "hipotese": "Três hipóteses abertas, sem preferência: leitura, atenção, contexto." },
+    { "etapa": "anamnese", "hipotese": "A escolarização descontínua ganha peso; a atenção em casa parece preservada." },
+    { "etapa": "resultados", "hipotese": "Leitura abaixo da média, com intervalo que alcança a faixa média." },
+    { "etapa": "integracao", "hipotese": "Defasagem em leitura ligada à escolarização, com agitação concentrada nas tarefas de leitura." }
+  ]
+}

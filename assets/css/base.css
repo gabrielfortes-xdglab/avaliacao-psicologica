@@ -1,0 +1,160 @@
+/* Estilo base do guia de Avaliação Psicológica.
+   Paleta e formas herdadas do guia de TCC. Fontes do sistema (sem CDN). */
+
+:root{
+  --paper:#F3F6F5;
+  --card:#FFFFFF;
+  --ink:#172523;
+  --ink-soft:#4E605D;
+  --teal:#0F5F55;
+  --teal-soft:#E3EEEC;
+  --line:#D9E0DE;
+  --alerta:#8A5300;
+  --alerta-soft:#FBF1DC;
+  --erro:#9B2C2C;
+  --erro-soft:#FBE9E9;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(23,37,35,.06),0 8px 24px rgba(23,37,35,.07);
+  --font-display:"Avenir Next","Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:var(--font-body);
+  background:var(--paper);
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.55;
+}
+
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px;border-radius:4px}
+
+.pular{
+  position:absolute;left:-9999px;top:8px;
+  background:var(--card);padding:8px 14px;border-radius:8px;font-weight:600;
+}
+.pular:focus{left:8px;z-index:10}
+
+.app{
+  max-width:1080px;
+  margin:0 auto;
+  padding:48px 24px 90px;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  gap:32px;
+}
+
+/* ======= Cabeçalho ======= */
+.top{display:flex;flex-direction:column;gap:8px;max-width:62ch}
+.eyebrow{
+  font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal);font-weight:600;
+}
+.voltar{font-size:13px;font-weight:600;text-decoration:none}
+.voltar:hover{text-decoration:underline}
+h1{
+  font-family:var(--font-display);
+  font-weight:700;font-size:clamp(26px,3.4vw,36px);
+  line-height:1.12;letter-spacing:-.01em;
+}
+.subtitle{color:var(--ink-soft);max-width:56ch}
+
+/* ======= Grupos e cartões ======= */
+main{display:flex;flex-direction:column;gap:36px}
+.grupo{display:flex;flex-direction:column;gap:14px}
+.grupo-cabecalho h2{
+  font-family:var(--font-display);font-weight:600;font-size:20px;line-height:1.2;
+}
+.grupo-cabecalho p{color:var(--ink-soft);font-size:13.5px;max-width:62ch}
+
+.grid{
+  list-style:none;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:16px;
+}
+.grid > li{display:flex}
+
+.tool{
+  flex:1;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:20px 20px 18px;
+  display:flex;flex-direction:column;gap:12px;
+  min-height:190px;
+  transition:transform .15s,border-color .15s;
+  text-decoration:none;color:inherit;
+}
+a.tool:hover{transform:translateY(-3px);border-color:#BFCBC8}
+.tool .tag{
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:700;color:var(--teal);
+  display:flex;align-items:center;gap:6px;
+}
+.tool .tag .dot{width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.tool h3{
+  font-family:var(--font-display);font-weight:600;
+  font-size:18px;line-height:1.2;
+}
+.tool p{font-size:13px;color:var(--ink-soft);line-height:1.5;flex:1}
+.tool .foot{
+  font-size:13px;font-weight:600;color:var(--teal);
+  display:flex;align-items:center;gap:5px;
+}
+.tool .foot svg{width:13px;height:13px;stroke:var(--teal);transition:transform .15s}
+a.tool:hover .foot svg{transform:translateX(3px)}
+
+.tool.disabled{
+  background:transparent;box-shadow:none;
+  border:1.5px dashed #B9C4C1;
+}
+.tool.disabled h3{color:var(--ink-soft)}
+.badge-soon{
+  align-self:flex-start;
+  font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-soft);background:var(--paper);
+  border:1px solid var(--line);border-radius:99px;
+  padding:3px 10px;
+}
+
+/* ======= Avisos ======= */
+.aviso{
+  border-radius:10px;padding:12px 14px;font-size:13.5px;
+  border:1px solid var(--line);background:var(--teal-soft);
+}
+.aviso.revisao{background:var(--alerta-soft);border-color:#E9D3A0;color:var(--alerta)}
+.aviso.erro{background:var(--erro-soft);border-color:#EBC1C1;color:var(--erro)}
+
+/* ======= Rodapé ======= */
+.note{
+  font-size:12.5px;color:var(--ink-soft);
+  border-top:1px solid var(--line);padding-top:16px;
+  display:flex;flex-direction:column;gap:4px;
+}
+
+/* ======= Tela estreita: coluna única ======= */
+@media (max-width:720px){
+  .app{padding:32px 16px 70px;gap:26px}
+  .grid{grid-template-columns:1fr}
+  .tool{min-height:0}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important}
+}
+
+/* ======= Impressão ======= */
+@media print{
+  body{background:#fff;font-size:11pt}
+  .app{max-width:none;padding:0;min-height:0;gap:16pt}
+  .pular,.voltar,.nao-imprimir{display:none !important}
+  .tool,.aviso{box-shadow:none;break-inside:avoid}
+  a{color:inherit;text-decoration:none}
+  h1{font-size:20pt}
+}

@@ -1,0 +1,12 @@
+{
+  "termos": [
+    {
+      "id": "percentil",
+      "termo": "Percentil",
+      "definicao": "Posição de um escore em relação à amostra normativa: a porcentagem de pessoas da amostra com escore igual ou inferior.",
+      "decisao_que_depende": "Decidir se um desempenho está dentro do esperado para a idade antes de levantar hipótese de dificuldade.",
+      "erro_comum": "Ler o percentil como porcentagem de acertos.",
+      "relacionados": ["norma", "escore-padrao"]
+    }
+  ]
+}

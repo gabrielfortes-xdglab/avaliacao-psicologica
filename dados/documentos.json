@@ -1,0 +1,16 @@
+{
+  "norma_base": { "referencia": "A confirmar no texto vigente do CFP", "a_confirmar": true },
+  "documentos": [
+    {
+      "id": "laudo",
+      "nome": "Laudo psicológico",
+      "finalidade": "A preencher a partir da resolução vigente",
+      "estrutura": [],
+      "quando_usar": "A preencher",
+      "exemplos": [ { "adequado": "", "problematico": "", "comentario": "" } ],
+      "a_confirmar": true
+    }
+  ],
+  "frases": [],
+  "checklist": []
+}
