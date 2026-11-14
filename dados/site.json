@@ -10,6 +10,8 @@
   "textos": {
     "abrir": "Abrir ferramenta",
     "voltar": "← Todas as ferramentas",
+    "formacao": "← Formação de Estágio",
+    "formacao_endereco": "../formacao-estagio/",
     "em_revisao": "Em revisão: este conteúdo ainda não foi conferido por um supervisor de Avaliação Psicológica."
   },
   "rotulos_status": {

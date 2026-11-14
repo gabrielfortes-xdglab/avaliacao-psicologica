@@ -79,6 +79,10 @@
           cab.appendChild(el("p", { class: "subtitle", text: ferramenta.descricao }));
           document.title = ferramenta.nome + " | " + site.titulo_aba;
         } else {
+          // Link para a página de entrada (Formação de Estágio), que fica em outro repositório.
+          if (site.textos.formacao && site.textos.formacao_endereco) {
+            cab.appendChild(el("a", { class: "voltar", href: url(site.textos.formacao_endereco), text: site.textos.formacao }));
+          }
           cab.appendChild(el("div", { class: "eyebrow", text: site.eyebrow }));
           cab.appendChild(el("h1", { text: site.titulo }));
           cab.appendChild(el("p", { class: "subtitle", text: site.subtitulo }));
