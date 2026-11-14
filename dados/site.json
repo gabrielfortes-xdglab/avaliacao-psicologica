@@ -41,7 +41,7 @@
           "nome": "Interpretação de escores",
           "descricao": "Leia um perfil de resultados fictício e escolha a frase interpretativa adequada. Cada alternativa errada mostra o erro de leitura que contém.",
           "pagina": "ferramentas/escores.html",
-          "status": "em_desenvolvimento"
+          "status": "no_ar"
         }
       ]
     },
@@ -62,7 +62,7 @@
           "nome": "Glossário psicométrico",
           "descricao": "Termos de medida com definição curta, uma decisão clínica que depende do conceito e o erro comum de interpretação.",
           "pagina": "ferramentas/glossario.html",
-          "status": "em_desenvolvimento"
+          "status": "no_ar"
         },
         {
           "id": "documentos",

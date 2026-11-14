@@ -6,6 +6,7 @@ Sai com código 1 se houver erro. Só usa a biblioteca padrão.
 Regras dos casos: docs/esquema-caso.md.
 """
 import json
+import math
 import re
 import sys
 from pathlib import Path
@@ -30,6 +31,7 @@ ERROS_LAUDO = {
 STATUS_FERRAMENTA = {"no_ar", "em_desenvolvimento"}
 MAX_PERGUNTAS = 15
 ID_VALIDO = re.compile(r"^[a-z0-9-]+$")
+METRICA = re.compile(r"média\s+(-?\d+(?:[.,]\d+)?).*?desvio padrão\s+(\d+(?:[.,]\d+)?)", re.I | re.S)
 
 erros = []
 avisos = []
@@ -136,9 +138,15 @@ def validar_site():
 # ------------------------------------------------------------ glossario.json
 def validar_glossario():
     d, c = ler(DADOS / "glossario.json")
-    if d is None or not c.campos(d, "raiz", {"termos": list}):
-        return
+    if d is None or not c.campos(d, "raiz", {"termos": list, "textos": dict}):
+        return set()
+    c.campos(d["textos"], "textos", {k: str for k in (
+        "instrucao", "buscar", "contagem", "nenhum", "decisao", "erro",
+        "relacionados", "imprimir", "ver_no_glossario")})
+    if d.get("revisado_por") is None:
+        c.aviso("raiz", "sem revisor: a página mostra 'em revisão'")
     ids = c.ids_unicos(d["termos"], "termos")
+    formas = {}
     for t in d["termos"]:
         onde = "termo %s" % t.get("id")
         if c.campos(t, onde, {
@@ -146,10 +154,47 @@ def validar_glossario():
             "decisao_que_depende": str, "erro_comum": str, "relacionados": list,
         }):
             c.texto_preenchido(t, onde, ["termo", "definicao", "decisao_que_depende", "erro_comum"])
-            for r in t["relacionados"]:
-                if r not in ids:
-                    # Aviso, e não erro: o glossário é preenchido aos poucos na Fase 1.
-                    c.aviso(onde, "termo relacionado ainda não existe: '%s'" % r)
+            if not ID_VALIDO.match(t["id"]):
+                c.erro(onde, "id só pode ter letras minúsculas, números e hífen")
+            c.referencias(t["relacionados"], ids, onde, "termo relacionado")
+            for f in t.get("formas", [t["termo"]]):
+                if not isinstance(f, str) or not f.strip():
+                    c.erro(onde, "forma vazia em 'formas'")
+                elif f.lower() in formas:
+                    c.erro(onde, "forma '%s' repetida (já usada em '%s')" % (f, formas[f.lower()]))
+                else:
+                    formas[f.lower()] = t["id"]
+    return ids
+
+
+# -------------------------------------------------------------- escores.json
+def validar_escores(ids_glossario):
+    d, c = ler(DADOS / "escores.json")
+    if d is None or not c.campos(d, "raiz", {"textos": dict, "erros_tipicos": dict, "perfis": list}):
+        return
+    if d.get("revisado_por") is None:
+        c.aviso("raiz", "sem revisor: a página mostra 'em revisão'")
+    for cod in sorted(ERROS_ESCORE):
+        e = d["erros_tipicos"].get(cod)
+        if e is None:
+            c.erro("erros_tipicos", "falta o código '%s'" % cod)
+        elif c.campos(e, "erros_tipicos.%s" % cod, {"nome": str, "explicacao": str}):
+            if e.get("termo") is not None and e["termo"] not in ids_glossario:
+                c.erro("erros_tipicos.%s" % cod, "termo do glossário inexistente: '%s'" % e["termo"])
+    c.ids_unicos(d["perfis"], "perfis")
+    total, usados = 0, set()
+    for pf in d["perfis"]:
+        pref = "perfil %s" % (pf.get("id") if isinstance(pf, dict) else "?")
+        if c.campos(pf, pref, {"id": str, "descricao": str, "instrumentos": list, "questoes": list}):
+            validar_resultados(c, pf, pref)
+            total += len(pf["questoes"])
+            for q in pf["questoes"]:
+                for a in q.get("alternativas", []) if isinstance(q, dict) else []:
+                    if isinstance(a, dict) and a.get("erro_tipico"):
+                        usados.add(a["erro_tipico"])
+    for cod in sorted(ERROS_ESCORE - usados):
+        c.aviso("perfis", "nenhuma alternativa cobre o erro '%s'" % cod)
+    print("escores.json: %d questões no modo livre." % total)
 
 
 # ----------------------------------------------------------- construtos.json
@@ -263,6 +308,63 @@ def validar_anamnese(c, a):
         c.erro("anamnese", "informação essencial '%s' não é revelada por nenhum caminho" % i)
 
 
+def validar_resultados(c, r, pref):
+    """Bloco de resultados (instrumentos e questões). Usado nos casos e em escores.json."""
+    if c.campos(r, pref, {"instrumentos": list, "questoes": list}):
+        medidas = []
+        for k, inst in enumerate(r["instrumentos"]):
+            onde = pref + ".instrumentos[%d]" % k
+            if not c.campos(inst, onde, {"nome": str, "ficticio": bool, "construto": str, "metrica": str, "medidas": list}):
+                continue
+            if inst["ficticio"] is not True:
+                c.erro(onde, "'ficticio' deve ser true (regra 1 do CLAUDE.md)")
+            for m in inst["medidas"]:
+                ondem = "%s.medidas.%s" % (onde, m.get("id") if isinstance(m, dict) else "?")
+                if c.campos(m, ondem, {
+                    "id": str, "rotulo": str, "bruto": NUM, "percentil": NUM,
+                    "escore_padrao": NUM, "ic95": list, "faixa": str,
+                }):
+                    ic = m["ic95"]
+                    if len(ic) != 2 or not all(isinstance(x, NUM) and not isinstance(x, bool) for x in ic) or ic[0] > ic[1]:
+                        c.erro(ondem, "ic95 deve ter dois números em ordem crescente")
+                    elif not ic[0] <= m["escore_padrao"] <= ic[1]:
+                        c.erro(ondem, "escore_padrao fora do ic95")
+                    if not 0 < m["percentil"] < 100:
+                        c.erro(ondem, "percentil deve estar entre 0 e 100")
+                    mt = METRICA.search(inst["metrica"])
+                    if not mt:
+                        c.aviso(onde, "métrica fora do formato '..., média M, desvio padrão D': a curva não aparece")
+                    else:
+                        media, dp = (float(x.replace(",", ".")) for x in mt.groups())
+                        esperado = 50 * (1 + math.erf((m["escore_padrao"] - media) / dp / math.sqrt(2)))
+                        if abs(esperado - m["percentil"]) > 3:
+                            c.aviso(ondem, "percentil %s não combina com o escore (esperado perto de %d)" % (m["percentil"], round(esperado)))
+                medidas.append(m)
+        ids_medidas = c.ids_unicos([m for m in medidas if isinstance(m, dict)], pref + ".medidas")
+        for k, q in enumerate(r["questoes"]):
+            onde = pref + ".questoes[%d]" % k
+            if not c.campos(q, onde, {"medida": str, "enunciado": str, "alternativas": list}):
+                continue
+            c.referencias([q["medida"]], ids_medidas, onde, "medida")
+            if "comparar" in q:
+                c.referencias([q["comparar"]], ids_medidas, onde, "medida em 'comparar'")
+            corretas = 0
+            for j, alt in enumerate(q["alternativas"]):
+                ondea = "%s.alternativas[%d]" % (onde, j)
+                if not c.campos(alt, ondea, {"texto": str, "correta": bool, "comentario": str}):
+                    continue
+                c.texto_preenchido(alt, ondea, ["texto", "comentario"])
+                tipo = alt.get("erro_tipico")
+                if alt["correta"]:
+                    corretas += 1
+                    if tipo is not None:
+                        c.erro(ondea, "alternativa correta deve ter erro_tipico nulo")
+                elif tipo not in ERROS_ESCORE:
+                    c.erro(ondea, "erro_tipico desconhecido ou ausente: %r" % tipo)
+            if corretas != 1:
+                c.erro(onde, "deve ter exatamente uma alternativa correta (tem %d)" % corretas)
+
+
 def validar_caso(caminho):
     d, c = ler(caminho)
     if d is None:
@@ -335,50 +437,7 @@ def validar_caso(caminho):
         validar_anamnese(c, d["anamnese"])
 
     if "resultados" in d:
-        r = d["resultados"]
-        if c.campos(r, "resultados", {"instrumentos": list, "questoes": list}):
-            medidas = []
-            for k, inst in enumerate(r["instrumentos"]):
-                onde = "resultados.instrumentos[%d]" % k
-                if not c.campos(inst, onde, {"nome": str, "ficticio": bool, "construto": str, "metrica": str, "medidas": list}):
-                    continue
-                if inst["ficticio"] is not True:
-                    c.erro(onde, "'ficticio' deve ser true (regra 1 do CLAUDE.md)")
-                for m in inst["medidas"]:
-                    ondem = "%s.medidas.%s" % (onde, m.get("id") if isinstance(m, dict) else "?")
-                    if c.campos(m, ondem, {
-                        "id": str, "rotulo": str, "bruto": NUM, "percentil": NUM,
-                        "escore_padrao": NUM, "ic95": list, "faixa": str,
-                    }):
-                        ic = m["ic95"]
-                        if len(ic) != 2 or not all(isinstance(x, NUM) and not isinstance(x, bool) for x in ic) or ic[0] > ic[1]:
-                            c.erro(ondem, "ic95 deve ter dois números em ordem crescente")
-                        elif not ic[0] <= m["escore_padrao"] <= ic[1]:
-                            c.erro(ondem, "escore_padrao fora do ic95")
-                        if not 0 < m["percentil"] < 100:
-                            c.erro(ondem, "percentil deve estar entre 0 e 100")
-                    medidas.append(m)
-            ids_medidas = c.ids_unicos([m for m in medidas if isinstance(m, dict)], "resultados.medidas")
-            for k, q in enumerate(r["questoes"]):
-                onde = "resultados.questoes[%d]" % k
-                if not c.campos(q, onde, {"medida": str, "enunciado": str, "alternativas": list}):
-                    continue
-                c.referencias([q["medida"]], ids_medidas, onde, "medida")
-                corretas = 0
-                for j, alt in enumerate(q["alternativas"]):
-                    ondea = "%s.alternativas[%d]" % (onde, j)
-                    if not c.campos(alt, ondea, {"texto": str, "correta": bool, "comentario": str}):
-                        continue
-                    c.texto_preenchido(alt, ondea, ["texto", "comentario"])
-                    tipo = alt.get("erro_tipico")
-                    if alt["correta"]:
-                        corretas += 1
-                        if tipo is not None:
-                            c.erro(ondea, "alternativa correta deve ter erro_tipico nulo")
-                    elif tipo not in ERROS_ESCORE:
-                        c.erro(ondea, "erro_tipico desconhecido ou ausente: %r" % tipo)
-                if corretas != 1:
-                    c.erro(onde, "deve ter exatamente uma alternativa correta (tem %d)" % corretas)
+        validar_resultados(c, d["resultados"], "resultados")
 
     if "integracao" in d:
         g = d["integracao"]
@@ -461,7 +520,8 @@ def validar_casos():
 
 def main():
     validar_site()
-    validar_glossario()
+    ids_glossario = validar_glossario()
+    validar_escores(ids_glossario or set())
     validar_construtos()
     validar_documentos()
     validar_satepsi()

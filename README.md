@@ -23,6 +23,8 @@ Abrir http://localhost:8000
     assets/css, assets/js   estilos e scripts
     dados/                  todo o conteúdo, em JSON
     dados/site.json         textos da página inicial e lista de ferramentas (com o status de cada uma)
+    dados/glossario.json    termos do glossário e textos da página
+    dados/escores.json      questões do modo livre de interpretação de escores
     dados/casos/            um arquivo por caso fictício
     scripts/                validação de dados e atualização do SATEPSI
     .github/workflows/      validação a cada push e rotina mensal

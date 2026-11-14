@@ -1,12 +1,169 @@
 {
+  "revisado_por": null,
+  "textos": {
+    "instrucao": "Busque um termo ou percorra a lista. Cada entrada traz a definição, uma decisão clínica que depende do conceito e o erro comum de interpretação.",
+    "buscar": "Buscar termo",
+    "contagem": "termos",
+    "nenhum": "Nenhum termo encontrado para essa busca.",
+    "decisao": "Decisão que depende do conceito",
+    "erro": "Erro comum",
+    "relacionados": "Termos relacionados",
+    "imprimir": "Imprimir ou salvar em PDF",
+    "ver_no_glossario": "Ver no glossário"
+  },
   "termos": [
+    {
+      "id": "escore-bruto",
+      "termo": "Escore bruto",
+      "formas": ["escore bruto", "escores brutos"],
+      "definicao": "Resultado direto da apuração do instrumento, antes de qualquer conversão: número de acertos, soma de pontos ou tempo de execução.",
+      "decisao_que_depende": "Conferir a apuração antes de consultar a tabela de normas, já que um erro de soma altera todos os escores derivados.",
+      "erro_comum": "Interpretar o escore bruto sem a norma, ou comparar escores brutos de instrumentos e de faixas etárias diferentes.",
+      "relacionados": ["norma", "percentil", "escore-padrao"]
+    },
     {
       "id": "percentil",
       "termo": "Percentil",
+      "formas": ["percentil", "percentis"],
       "definicao": "Posição de um escore em relação à amostra normativa: a porcentagem de pessoas da amostra com escore igual ou inferior.",
       "decisao_que_depende": "Decidir se um desempenho está dentro do esperado para a idade antes de levantar hipótese de dificuldade.",
       "erro_comum": "Ler o percentil como porcentagem de acertos.",
-      "relacionados": ["norma", "escore-padrao"]
+      "relacionados": ["norma", "amostra-normativa", "escore-padrao"]
+    },
+    {
+      "id": "escore-padrao",
+      "termo": "Escore padrão",
+      "formas": ["escore padrão", "escores padrão"],
+      "definicao": "Escore convertido para uma escala com média e desvio padrão fixos, que expressa a distância do resultado em relação à média da amostra normativa. Escore z, escore T e QI de desvio são tipos de escore padrão.",
+      "decisao_que_depende": "Comparar o desempenho de uma pessoa em medidas diferentes, depois de conferir a média e o desvio padrão de cada escala.",
+      "erro_comum": "Comparar números de escalas com métricas diferentes como se estivessem na mesma unidade (por exemplo, um escore T de 60 e um escore padrão de 100).",
+      "relacionados": ["escore-z", "escore-t", "qi-de-desvio", "norma"]
+    },
+    {
+      "id": "escore-z",
+      "termo": "Escore z",
+      "formas": ["escore z", "escores z"],
+      "definicao": "Escore padrão com média 0 e desvio padrão 1. Indica quantos desvios padrão o resultado está acima (valor positivo) ou abaixo (valor negativo) da média.",
+      "decisao_que_depende": "Converter escores de escalas diferentes para a mesma unidade antes de compará-los.",
+      "erro_comum": "Ler o sinal negativo como resultado ruim em qualquer instrumento. Em uma escala de sintomas, um z negativo indica menos sintomas que a média.",
+      "relacionados": ["escore-padrao", "escore-t"]
+    },
+    {
+      "id": "escore-t",
+      "termo": "Escore T",
+      "formas": ["escore T", "escores T"],
+      "definicao": "Escore padrão com média 50 e desvio padrão 10. Um T de 60 está um desvio padrão acima da média.",
+      "decisao_que_depende": "Verificar se o escore em um inventário se afasta da média o bastante para merecer investigação.",
+      "erro_comum": "Ler o escore T como porcentagem ou como percentil. Um T de 50 corresponde à média da amostra normativa.",
+      "relacionados": ["escore-padrao", "escore-z", "percentil"]
+    },
+    {
+      "id": "qi-de-desvio",
+      "termo": "QI de desvio",
+      "formas": ["QI de desvio"],
+      "definicao": "Escore padrão usado em medidas de inteligência, em geral com média 100 e desvio padrão 15. Expressa a posição do desempenho em relação a pessoas da mesma idade na amostra normativa.",
+      "decisao_que_depende": "Situar o desempenho intelectual em relação ao grupo etário ao investigar hipóteses sobre o funcionamento cognitivo.",
+      "erro_comum": "Tratar o QI como quantidade fixa de inteligência, sem considerar o erro de medida, a data das normas e as condições da aplicação.",
+      "relacionados": ["escore-padrao", "erro-padrao", "amostra-normativa"]
+    },
+    {
+      "id": "norma",
+      "termo": "Norma",
+      "formas": ["tabela de normas", "tabelas de normas", "normas do instrumento"],
+      "definicao": "Referência usada para interpretar o escore bruto, construída com os resultados de uma amostra normativa. Em geral aparece como tabela de conversão de escores brutos em percentis ou em escores padrão.",
+      "decisao_que_depende": "Escolher a tabela adequada (idade, escolaridade, região) antes de converter o escore.",
+      "erro_comum": "Usar norma de um grupo diferente do da pessoa avaliada, ou norma desatualizada, sem registrar esse limite.",
+      "relacionados": ["amostra-normativa", "escore-bruto", "percentil"]
+    },
+    {
+      "id": "amostra-normativa",
+      "termo": "Amostra normativa",
+      "formas": ["amostra normativa", "amostras normativas"],
+      "definicao": "Grupo de pessoas que respondeu ao instrumento no estudo de normatização e que serve de base de comparação para os escores.",
+      "decisao_que_depende": "Avaliar se a pessoa avaliada se parece com a amostra em idade, escolaridade, região e época, antes de confiar na comparação.",
+      "erro_comum": "Supor que a amostra representa toda a população. A descrição da amostra no manual mostra quem ficou de fora.",
+      "relacionados": ["norma", "percentil"]
+    },
+    {
+      "id": "fidedignidade",
+      "termo": "Fidedignidade",
+      "formas": ["fidedignidade"],
+      "definicao": "Grau de consistência e de precisão dos escores de um instrumento. Costuma ser estimada por consistência interna, por teste e reteste ou por concordância entre avaliadores. Também é chamada de precisão ou confiabilidade.",
+      "decisao_que_depende": "Decidir quanto peso dar a um escore isolado. Quanto menor a fidedignidade, maior o erro de medida e mais largo o intervalo de confiança.",
+      "erro_comum": "Tratar a fidedignidade como propriedade fixa do teste. Ela é estimada para os escores de uma amostra e pode mudar em outro grupo.",
+      "relacionados": ["erro-padrao", "intervalo-de-confianca", "validade"]
+    },
+    {
+      "id": "erro-padrao",
+      "termo": "Erro padrão de medida",
+      "formas": ["erro padrão de medida", "erro de medida"],
+      "definicao": "Estimativa de quanto o escore obtido pode variar em torno do escore verdadeiro por causa da imprecisão do instrumento. É calculado a partir da fidedignidade e do desvio padrão da escala.",
+      "decisao_que_depende": "Construir o intervalo de confiança do escore e julgar se a diferença entre dois escores supera a imprecisão da medida.",
+      "erro_comum": "Interpretar o escore obtido como valor exato, ou tratar diferenças pequenas entre escores como diferenças reais.",
+      "relacionados": ["fidedignidade", "intervalo-de-confianca"]
+    },
+    {
+      "id": "intervalo-de-confianca",
+      "termo": "Intervalo de confiança",
+      "formas": ["intervalo de confiança", "intervalos de confiança"],
+      "definicao": "Faixa de valores em torno do escore obtido que, com um nível de confiança definido (em geral 95%), deve conter o escore verdadeiro. É construída com o erro padrão de medida.",
+      "decisao_que_depende": "Relatar o resultado como faixa e verificar se o intervalo cruza o limite entre duas faixas de classificação antes de classificar.",
+      "erro_comum": "Relatar só o escore pontual, ou ler o intervalo como a faixa em que estão 95% das pessoas.",
+      "relacionados": ["erro-padrao", "faixa-de-classificacao"]
+    },
+    {
+      "id": "validade",
+      "termo": "Validade",
+      "formas": ["validade"],
+      "definicao": "Grau em que evidências e teoria sustentam a interpretação dos escores para um uso específico. As fontes clássicas de evidência são o conteúdo (os itens representam o domínio), o critério (os escores se relacionam com um indicador externo) e o construto (os escores se comportam como a teoria prevê).",
+      "decisao_que_depende": "Verificar se há evidência para o uso pretendido (faixa etária, contexto, finalidade) antes de incluir o instrumento no plano de avaliação.",
+      "erro_comum": "Dizer que um teste é válido em geral. A validade se refere a uma interpretação e a um uso. Concluir sobre um construto que o instrumento não mede extrapola essa evidência.",
+      "relacionados": ["fidedignidade", "ponto-de-corte"]
+    },
+    {
+      "id": "ponto-de-corte",
+      "termo": "Ponto de corte",
+      "formas": ["ponto de corte", "pontos de corte"],
+      "definicao": "Valor do escore a partir do qual o resultado é classificado em uma categoria (por exemplo, rastreio positivo). É definido em estudos que comparam o instrumento com um critério externo.",
+      "decisao_que_depende": "Decidir se um resultado de rastreio justifica investigação mais detalhada.",
+      "erro_comum": "Tratar o resultado acima do ponto de corte como diagnóstico, ou tratar escores muito próximos do corte como claramente diferentes.",
+      "relacionados": ["sensibilidade", "especificidade", "erro-padrao"]
+    },
+    {
+      "id": "sensibilidade",
+      "termo": "Sensibilidade",
+      "formas": ["sensibilidade"],
+      "definicao": "Proporção de pessoas que têm a condição e que o instrumento identifica corretamente, com resultado positivo.",
+      "decisao_que_depende": "Escolher um instrumento de rastreio quando o objetivo é deixar passar poucos casos.",
+      "erro_comum": "Ler a sensibilidade como a probabilidade de a pessoa ter a condição quando o resultado é positivo. Essa probabilidade depende também da frequência da condição no grupo avaliado.",
+      "relacionados": ["especificidade", "ponto-de-corte"]
+    },
+    {
+      "id": "especificidade",
+      "termo": "Especificidade",
+      "formas": ["especificidade"],
+      "definicao": "Proporção de pessoas que não têm a condição e que o instrumento classifica corretamente, com resultado negativo.",
+      "decisao_que_depende": "Estimar o risco de falsos positivos ao usar um instrumento para sustentar uma hipótese.",
+      "erro_comum": "Supor que alta especificidade garante que um resultado negativo afasta a condição. Para afastar a condição, o que importa é a sensibilidade.",
+      "relacionados": ["sensibilidade", "ponto-de-corte"]
+    },
+    {
+      "id": "faixa-de-classificacao",
+      "termo": "Faixa de classificação",
+      "formas": ["faixa de classificação", "faixas de classificação"],
+      "definicao": "Rótulo descritivo atribuído a um intervalo de escores (por exemplo, média, média inferior, limítrofe). Os limites e os nomes das faixas variam entre instrumentos e são definidos no manual.",
+      "decisao_que_depende": "Descrever o desempenho no laudo com o termo do manual, acompanhado do escore e do intervalo de confiança.",
+      "erro_comum": "Tratar a faixa como diagnóstico, ou ignorar que o intervalo de confiança pode abranger duas faixas.",
+      "relacionados": ["intervalo-de-confianca", "ponto-de-corte"]
+    },
+    {
+      "id": "efeito-teto-e-chao",
+      "termo": "Efeito teto e efeito chão",
+      "formas": ["efeito teto", "efeito chão"],
+      "definicao": "O efeito teto ocorre quando o instrumento é fácil demais para o grupo e muitas pessoas alcançam o escore máximo. O efeito chão ocorre quando é difícil demais e muitas ficam no escore mínimo. Nos dois casos, o instrumento deixa de diferenciar as pessoas naquele extremo.",
+      "decisao_que_depende": "Escolher um instrumento com nível de dificuldade adequado à pessoa avaliada e ler com cautela os escores nos extremos.",
+      "erro_comum": "Interpretar um escore máximo ou mínimo como medida exata da habilidade. Nesse ponto, o escore só indica que o desempenho está além do alcance do instrumento.",
+      "relacionados": ["escore-bruto", "amostra-normativa"]
     }
   ]
 }

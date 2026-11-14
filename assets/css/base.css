@@ -138,6 +138,128 @@ a.tool:hover .foot svg{transform:translateX(3px)}
   display:flex;flex-direction:column;gap:4px;
 }
 
+/* ======= Páginas de ferramenta ======= */
+.app.estreito{max-width:820px}
+.app.estreito main{gap:16px}
+.instrucao{font-size:15px;max-width:66ch}
+.contagem{font-size:13px;color:var(--ink-soft)}
+
+.barra{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
+.campo{display:flex;flex-direction:column;gap:4px;flex:1;min-width:220px}
+.campo label{font-size:13px;font-weight:600}
+input[type=search]{
+  font:inherit;padding:10px 12px;min-height:44px;
+  border:1px solid #9FB0AC;border-radius:10px;background:var(--card);color:var(--ink);
+}
+
+.botao{
+  font:inherit;font-weight:600;font-size:14px;
+  min-height:44px;padding:10px 18px;border-radius:10px;cursor:pointer;
+  background:var(--teal);color:#fff;border:1px solid var(--teal);
+}
+.botao:hover{background:#0B4A42}
+.botao.secundario{background:var(--card);color:var(--teal);border-color:#9FB0AC}
+.botao.secundario:hover{background:var(--teal-soft)}
+.acoes{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+.cartao{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:20px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.cartao h2{font-family:var(--font-display);font-weight:600;font-size:18px;line-height:1.25}
+.etiqueta{
+  display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--alerta);background:var(--alerta-soft);border:1px solid #E9D3A0;
+  border-radius:99px;padding:2px 9px;vertical-align:middle;
+}
+.meta{font-size:13px;color:var(--ink-soft)}
+
+/* ======= Glossário ======= */
+.termo-ficha{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;display:flex;flex-direction:column;gap:10px;
+  scroll-margin-top:16px;
+}
+.termo-ficha:target{border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-soft)}
+.termo-ficha h2{font-family:var(--font-display);font-weight:600;font-size:19px;line-height:1.2}
+.termo-ficha h2 a{color:inherit;text-decoration:none}
+.termo-ficha h2 a:hover{text-decoration:underline}
+.termo-ficha dl{display:flex;flex-direction:column;gap:2px}
+.termo-ficha dt{
+  font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--teal);margin-top:6px;
+}
+.termo-ficha dt.dt-erro{color:var(--erro)}
+.relacionados{font-size:13.5px;color:var(--ink-soft)}
+
+/* ======= Termo do glossário dentro de outras páginas ======= */
+.gl{position:relative;display:inline}
+.gl-termo{
+  font:inherit;color:inherit;background:none;border:0;padding:0;cursor:help;
+  text-decoration:underline dotted var(--teal);text-underline-offset:3px;text-decoration-thickness:1.5px;
+}
+.gl-def{
+  display:none;position:absolute;left:0;top:calc(100% + 6px);z-index:20;
+  width:min(320px,80vw);
+  background:var(--ink);color:#fff;border-radius:10px;padding:12px 14px;
+  font-size:13px;line-height:1.45;font-weight:400;text-align:left;
+  box-shadow:0 8px 24px rgba(23,37,35,.25);
+  flex-direction:column;gap:6px;
+}
+.gl-def a{color:#9FE3D6;font-weight:600}
+.gl:hover .gl-def,.gl:focus-within .gl-def,.gl.aberto .gl-def{display:flex}
+
+/* ======= Interpretação de escores ======= */
+.progresso{font-size:13px;font-weight:600;color:var(--teal);letter-spacing:.04em;text-transform:uppercase}
+.instrumentos{display:flex;flex-direction:column;gap:18px}
+.instrumento{display:flex;flex-direction:column;gap:4px}
+.tabela-rolagem{overflow-x:auto}
+table.medidas{border-collapse:collapse;width:100%;font-size:13.5px}
+table.medidas th,table.medidas td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
+table.medidas thead th{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+table.medidas td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+table.medidas tr.em-foco td,table.medidas tr.em-foco th{background:var(--teal-soft);font-weight:600}
+
+.curva{width:100%;height:auto;display:block}
+.curva .linha{fill:none;stroke:var(--ink-soft);stroke-width:1.5}
+.curva .area{fill:var(--teal-soft)}
+.curva .ic{fill:var(--teal);opacity:.22}
+.curva .marca{stroke:var(--teal);stroke-width:2.5}
+.curva .eixo{stroke:var(--line);stroke-width:1}
+.curva text{font-size:12px;fill:var(--ink-soft);font-family:var(--font-body)}
+.curva text.valor{fill:var(--teal);font-weight:700;font-size:13px}
+.curva text.titulo{fill:var(--ink);font-weight:600}
+
+.enunciado{font-size:16px;font-weight:600;line-height:1.4}
+.alternativas{list-style:none;display:flex;flex-direction:column;gap:10px}
+.alt{
+  width:100%;text-align:left;font:inherit;color:var(--ink);cursor:pointer;
+  background:var(--card);border:1.5px solid #9FB0AC;border-radius:12px;
+  padding:14px 16px;min-height:48px;
+}
+.alt:hover:not(:disabled){border-color:var(--teal);background:var(--teal-soft)}
+.alt:disabled{cursor:default;opacity:1}
+.alternativas li.respondida{
+  border-radius:12px;border:1.5px solid var(--line);background:var(--card);
+  padding:14px 16px;display:flex;flex-direction:column;gap:8px;
+}
+.alternativas li.respondida .alt{border:0;padding:0;min-height:0;background:none}
+.alternativas li.certa{border-color:var(--teal);background:var(--teal-soft)}
+.alternativas li.errada-escolhida{border-color:var(--erro);background:var(--erro-soft)}
+.veredito{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.certa .veredito{color:var(--teal)}
+.errada-escolhida .veredito{color:var(--erro)}
+.veredito.neutro{color:var(--ink-soft)}
+.comentario{font-size:14px}
+.erro-tipo{font-size:13.5px;color:var(--ink-soft)}
+.erro-tipo strong{color:var(--ink)}
+
+.resumo-lista{list-style:none;display:flex;flex-direction:column;gap:10px}
+.resumo-lista li{border-top:1px solid var(--line);padding-top:10px;font-size:14px}
+.placar{font-family:var(--font-display);font-size:28px;font-weight:700}
+[hidden]{display:none !important}
+
 /* ======= Tela estreita: coluna única ======= */
 @media (max-width:720px){
   .app{padding:32px 16px 70px;gap:26px}
@@ -153,7 +275,10 @@ a.tool:hover .foot svg{transform:translateX(3px)}
 @media print{
   body{background:#fff;font-size:11pt}
   .app{max-width:none;padding:0;min-height:0;gap:16pt}
-  .pular,.voltar,.nao-imprimir{display:none !important}
+  .pular,.voltar,.nao-imprimir,.gl-def{display:none !important}
+  .termo-ficha,.cartao{box-shadow:none;break-inside:avoid}
+  .termo-ficha[hidden]{display:none !important}
+  .gl-termo{text-decoration:none}
   .tool,.aviso{box-shadow:none;break-inside:avoid}
   a{color:inherit;text-decoration:none}
   h1{font-size:20pt}

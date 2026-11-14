@@ -62,7 +62,11 @@ Regras: todo `vai_para` aponta para nó existente ou `"fim"`; toda informação 
 ### `resultados`
 
 - `instrumentos`: lista com `nome` (fictício), `ficticio: true`, `construto`, `metrica` (por exemplo, "escore padrão, média 100, DP 15") e `medidas`, cada uma com `id`, `rotulo`, `bruto`, `percentil`, `escore_padrao`, `ic95` (dois números) e `faixa`.
-- `questoes`: lista com `medida` (id), `enunciado` e `alternativas`, cada uma com `texto`, `correta`, `erro_tipico` (código, nulo na correta) e `comentario`.
+- `questoes`: lista com `medida` (id), `enunciado` e `alternativas`, cada uma com `texto`, `correta`, `erro_tipico` (código, nulo na correta) e `comentario`. Campo opcional `comparar` (id de outra medida): a ferramenta mostra as duas curvas, para questões que comparam escores.
+
+Para a curva normal aparecer, `metrica` precisa trazer os números no formato "..., média M, desvio padrão D". O campo `escore_padrao` guarda o escore derivado na métrica do instrumento (escore padrão, T ou z).
+
+O modo livre da ferramenta usa `dados/escores.json`, em que cada item de `perfis` tem `id`, `descricao` e os mesmos campos `instrumentos` e `questoes` descritos aqui. O nome e a explicação de cada código de erro ficam em `erros_tipicos`, no mesmo arquivo.
 
 Códigos de `erro_tipico`: `percentil_como_acerto`, `ignora_erro_medida`, `limitrofe_como_diagnostico`, `metricas_diferentes`, `construto_nao_medido`, `inferencia_causal`.
 

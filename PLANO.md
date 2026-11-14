@@ -148,7 +148,7 @@ Ao final de cada fase, atualizar a tabela de status abaixo.
 | Fase | Status | Data |
 |---|---|---|
 | 0 | feita em local; falta publicar no GitHub Pages | 2026-11-14 |
-| 1 | a fazer | |
+| 1 | feita em local; conteúdo aguarda revisão do supervisor | 2026-11-14 |
 | 2 | a fazer | |
 | 3 | a fazer | |
 | 4 | a fazer | |

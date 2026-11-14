@@ -1,0 +1,489 @@
+{
+  "revisado_por": null,
+  "textos": {
+    "instrucao": "Leia o perfil de resultados e escolha a frase que o interpreta de forma adequada. Depois de responder, leia o comentário de cada alternativa.",
+    "ficticio": "Fictício",
+    "aviso_ficticio": "Pessoas, instrumentos e resultados desta página são fictícios.",
+    "questao": "Questão",
+    "de": "de",
+    "modo_livre": "Modo livre",
+    "modo_caso": "Caso",
+    "colunas": { "medida": "Medida", "bruto": "Bruto", "escore": "Escore", "percentil": "Percentil", "ic95": "IC 95%", "faixa": "Faixa" },
+    "curva_media": "média",
+    "curva_escore": "escore",
+    "curva_ic": "IC 95%",
+    "curva_descricao": "Curva normal da amostra normativa com o escore e o intervalo de confiança marcados.",
+    "correta": "Interpretação adequada",
+    "sua_resposta_errada": "Sua resposta",
+    "outra_errada": "Inadequada",
+    "erro_presente": "Erro presente",
+    "feedback_acerto": "Resposta adequada.",
+    "feedback_erro": "Resposta inadequada. Veja abaixo o erro que a frase escolhida contém.",
+    "proxima": "Próxima questão",
+    "ver_resumo": "Ver resumo",
+    "resumo_titulo": "Resumo",
+    "resumo_acertos": "respostas adequadas",
+    "resumo_erros_titulo": "Erros presentes nas frases que você escolheu",
+    "resumo_sem_erros": "Nenhuma frase inadequada foi escolhida.",
+    "vezes": "vez(es)",
+    "recomecar": "Recomeçar",
+    "imprimir": "Imprimir ou salvar em PDF",
+    "casos_titulo": "Questões a partir de um caso",
+    "sem_questoes": "Este caso não tem questões de interpretação de escores."
+  },
+  "erros_tipicos": {
+    "percentil_como_acerto": {
+      "nome": "Percentil lido como porcentagem",
+      "explicacao": "O percentil informa a posição em relação à amostra normativa. Ele não informa a proporção de itens acertados ou endossados.",
+      "termo": "percentil"
+    },
+    "ignora_erro_medida": {
+      "nome": "Erro de medida ignorado",
+      "explicacao": "Todo escore tem imprecisão. Tratar o valor obtido como exato, ou tratar diferenças pequenas como reais, desconsidera o intervalo de confiança.",
+      "termo": "erro-padrao"
+    },
+    "limitrofe_como_diagnostico": {
+      "nome": "Faixa ou escore tratado como diagnóstico",
+      "explicacao": "Uma faixa de classificação descreve a posição do escore. O diagnóstico depende da integração de várias fontes e de critérios que um escore isolado não cobre.",
+      "termo": "faixa-de-classificacao"
+    },
+    "metricas_diferentes": {
+      "nome": "Comparação entre métricas diferentes",
+      "explicacao": "Escalas com média e desvio padrão diferentes não podem ser comparadas pelo número. É preciso convertê-las para a mesma unidade, como a distância da média em desvios padrão.",
+      "termo": "escore-padrao"
+    },
+    "construto_nao_medido": {
+      "nome": "Conclusão sobre construto não medido",
+      "explicacao": "A interpretação precisa ficar dentro do que o instrumento mede. Concluir sobre outro construto extrapola a evidência de validade.",
+      "termo": "validade"
+    },
+    "inferencia_causal": {
+      "nome": "Afirmação causal a partir de escore",
+      "explicacao": "Um escore descreve um desempenho ou um relato em um momento. Ele não mostra o que causou esse resultado. Explicações causais são hipóteses a investigar com outras fontes.",
+      "termo": null
+    }
+  },
+  "perfis": [
+    {
+      "id": "perfil-a",
+      "descricao": "Criança de 9 anos, 4º ano. Avaliação em contexto escolar, solicitada por dificuldade em acompanhar as atividades.",
+      "instrumentos": [
+        {
+          "nome": "Bateria Fictícia de Habilidades Cognitivas (BFHC)",
+          "ficticio": true,
+          "construto": "Habilidades cognitivas",
+          "metrica": "Escore padrão, média 100, desvio padrão 15",
+          "medidas": [
+            { "id": "a1", "rotulo": "Raciocínio verbal", "bruto": 31, "percentil": 30, "escore_padrao": 92, "ic95": [85, 99], "faixa": "Média" },
+            { "id": "a2", "rotulo": "Memória de trabalho", "bruto": 14, "percentil": 7, "escore_padrao": 78, "ic95": [70, 86], "faixa": "Limítrofe" },
+            { "id": "a3", "rotulo": "Velocidade de processamento", "bruto": 40, "percentil": 16, "escore_padrao": 85, "ic95": [77, 93], "faixa": "Média inferior" }
+          ]
+        }
+      ],
+      "questoes": [
+        {
+          "medida": "a3",
+          "enunciado": "Em velocidade de processamento, a criança obteve percentil 16. Qual frase descreve esse resultado?",
+          "alternativas": [
+            {
+              "texto": "O desempenho foi igual ou superior ao de 16% das crianças da mesma idade na amostra normativa.",
+              "correta": true, "erro_tipico": null,
+              "comentario": "O percentil indica a posição relativa na amostra normativa. Um percentil 16 corresponde a cerca de um desvio padrão abaixo da média."
+            },
+            {
+              "texto": "A criança acertou 16% dos itens da tarefa.",
+              "correta": false, "erro_tipico": "percentil_como_acerto",
+              "comentario": "A proporção de acertos está ligada ao escore bruto (40 pontos), e o percentil não informa esse dado."
+            },
+            {
+              "texto": "A criança tem velocidade de processamento deficitária, o que confirma um transtorno de aprendizagem.",
+              "correta": false, "erro_tipico": "limitrofe_como_diagnostico",
+              "comentario": "A faixa é média inferior, e o intervalo de confiança (77 a 93) alcança a faixa média. Um escore isolado não sustenta diagnóstico."
+            },
+            {
+              "texto": "A lentidão medida é a causa da dificuldade em acompanhar as atividades.",
+              "correta": false, "erro_tipico": "inferencia_causal",
+              "comentario": "O escore descreve o desempenho na tarefa. A relação com a queixa escolar é uma hipótese, a ser examinada com observação, entrevista e material escolar."
+            }
+          ]
+        },
+        {
+          "medida": "a2",
+          "enunciado": "Em memória de trabalho, o escore padrão foi 78, com intervalo de confiança de 70 a 86 e faixa limítrofe. Nesta bateria, a faixa média inferior vai de 80 a 89. Qual frase é adequada para o relato?",
+          "alternativas": [
+            {
+              "texto": "O desempenho em memória de trabalho ficou abaixo da média nesta bateria (escore 78, intervalo de 70 a 86), e o dado precisa ser integrado às outras fontes da avaliação.",
+              "correta": true, "erro_tipico": null,
+              "comentario": "A frase descreve a posição do escore, informa o intervalo de confiança e não conclui além do que a medida permite."
+            },
+            {
+              "texto": "A criança apresenta deficiência intelectual limítrofe.",
+              "correta": false, "erro_tipico": "limitrofe_como_diagnostico",
+              "comentario": "Limítrofe é o nome de uma faixa de escores em uma medida. A frase transforma esse rótulo em diagnóstico, e ainda generaliza de uma habilidade para o funcionamento intelectual."
+            },
+            {
+              "texto": "A memória de trabalho da criança é exatamente 78, valor que a coloca fora da faixa média inferior.",
+              "correta": false, "erro_tipico": "ignora_erro_medida",
+              "comentario": "O intervalo de confiança vai até 86, dentro da faixa média inferior desta bateria. O escore obtido é uma estimativa."
+            },
+            {
+              "texto": "O baixo escore mostra que a criança se distrai com facilidade em sala de aula.",
+              "correta": false, "erro_tipico": "construto_nao_medido",
+              "comentario": "A tarefa mede memória de trabalho em aplicação individual. O comportamento em sala é outro fenômeno e pede observação direta."
+            }
+          ]
+        },
+        {
+          "medida": "a1",
+          "comparar": "a3",
+          "enunciado": "Compare raciocínio verbal (92, intervalo de 85 a 99) e velocidade de processamento (85, intervalo de 77 a 93). O que se pode afirmar?",
+          "alternativas": [
+            {
+              "texto": "Os intervalos de confiança se sobrepõem em boa parte. Só com esses dados, não se pode afirmar que há diferença entre as duas habilidades.",
+              "correta": true, "erro_tipico": null,
+              "comentario": "A diferença de 7 pontos é pequena diante da imprecisão das duas medidas. A comparação formal usa o erro padrão da diferença, informado no manual do instrumento."
+            },
+            {
+              "texto": "O raciocínio verbal é um ponto forte da criança, claramente superior à velocidade de processamento.",
+              "correta": false, "erro_tipico": "ignora_erro_medida",
+              "comentario": "A frase trata uma diferença de 7 pontos como real, sem considerar o erro de medida de cada escore."
+            },
+            {
+              "texto": "A velocidade mais baixa indica que a criança tem dificuldade de atenção.",
+              "correta": false, "erro_tipico": "construto_nao_medido",
+              "comentario": "A bateria não traz medida de atenção. A frase conclui sobre um construto que não foi avaliado."
+            },
+            {
+              "texto": "O raciocínio verbal só não é mais alto porque a lentidão prejudica o desempenho da criança.",
+              "correta": false, "erro_tipico": "inferencia_causal",
+              "comentario": "Os escores não informam relação de causa entre as duas habilidades."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perfil-b",
+      "descricao": "Adulto de 34 anos. Avaliação em contexto clínico, com queixa de preocupação constante e dificuldade de concentração no trabalho.",
+      "instrumentos": [
+        {
+          "nome": "Inventário Fictício de Sintomas de Ansiedade (IFSA)",
+          "ficticio": true,
+          "construto": "Sintomas de ansiedade nas duas últimas semanas (autorrelato)",
+          "metrica": "Escore T, média 50, desvio padrão 10",
+          "medidas": [
+            { "id": "b1", "rotulo": "Sintomas de ansiedade (total)", "bruto": 27, "percentil": 88, "escore_padrao": 62, "ic95": [56, 68], "faixa": "Acima da média" }
+          ]
+        },
+        {
+          "nome": "Escala Fictícia de Atenção Sustentada (EFAS)",
+          "ficticio": true,
+          "construto": "Atenção sustentada (tarefa de desempenho)",
+          "metrica": "Escore padrão, média 100, desvio padrão 15",
+          "medidas": [
+            { "id": "b2", "rotulo": "Atenção sustentada", "bruto": 48, "percentil": 70, "escore_padrao": 108, "ic95": [100, 116], "faixa": "Média" }
+          ]
+        }
+      ],
+      "questoes": [
+        {
+          "medida": "b1",
+          "comparar": "b2",
+          "enunciado": "O perfil traz um escore T de 62 em sintomas de ansiedade e um escore padrão de 108 em atenção sustentada. Qual leitura dos dois números é adequada?",
+          "alternativas": [
+            {
+              "texto": "As escalas têm métricas diferentes. Em desvios padrão, o escore de ansiedade está 1,2 acima da média e o de atenção, cerca de 0,5 acima.",
+              "correta": true, "erro_tipico": null,
+              "comentario": "Convertidos para a mesma unidade, os dois escores podem ser situados: (62 − 50) ÷ 10 = 1,2 e (108 − 100) ÷ 15 ≈ 0,5."
+            },
+            {
+              "texto": "Como 108 é maior que 62, a atenção está mais elevada que a ansiedade.",
+              "correta": false, "erro_tipico": "metricas_diferentes",
+              "comentario": "Os números vêm de escalas com médias e desvios padrão diferentes. Em relação à média de cada escala, o escore de ansiedade é o mais distante."
+            },
+            {
+              "texto": "A ansiedade elevada é o que mantém a atenção em bom nível.",
+              "correta": false, "erro_tipico": "inferencia_causal",
+              "comentario": "Dois escores obtidos na mesma avaliação não mostram que um resultado produz o outro."
+            },
+            {
+              "texto": "A pessoa apresentou 62% dos sintomas de ansiedade e 108% do desempenho esperado em atenção.",
+              "correta": false, "erro_tipico": "percentil_como_acerto",
+              "comentario": "Escore T e escore padrão indicam distância da média em desvios padrão. Nenhum dos dois é uma porcentagem."
+            }
+          ]
+        },
+        {
+          "medida": "b1",
+          "enunciado": "Em sintomas de ansiedade, o escore T foi 62 (percentil 88, intervalo de 56 a 68). Qual frase é adequada?",
+          "alternativas": [
+            {
+              "texto": "A pessoa relatou mais sintomas de ansiedade do que a maior parte da amostra normativa, cerca de um desvio padrão acima da média. O resultado pede investigação clínica.",
+              "correta": true, "erro_tipico": null,
+              "comentario": "A frase situa o relato em relação à norma e trata o resultado como indicação para investigar, sem concluir por diagnóstico."
+            },
+            {
+              "texto": "A pessoa endossou 88% dos itens do inventário.",
+              "correta": false, "erro_tipico": "percentil_como_acerto",
+              "comentario": "O percentil 88 indica que o escore foi igual ou superior ao de 88% da amostra normativa. A quantidade de itens endossados está no escore bruto."
+            },
+            {
+              "texto": "O resultado confirma transtorno de ansiedade generalizada.",
+              "correta": false, "erro_tipico": "limitrofe_como_diagnostico",
+              "comentario": "Um escore acima da média em inventário de autorrelato não equivale a diagnóstico, que depende de entrevista clínica e de critérios que o inventário não cobre."
+            },
+            {
+              "texto": "A pessoa tem personalidade ansiosa.",
+              "correta": false, "erro_tipico": "construto_nao_medido",
+              "comentario": "O inventário pergunta sobre sintomas nas duas últimas semanas. Ele não mede traço de personalidade."
+            }
+          ]
+        },
+        {
+          "medida": "b2",
+          "enunciado": "Em atenção sustentada, o escore padrão foi 108, com intervalo de confiança de 100 a 116. Qual frase é adequada?",
+          "alternativas": [
+            {
+              "texto": "O desempenho em atenção sustentada ficou dentro da média nesta tarefa, nas condições da aplicação.",
+              "correta": true, "erro_tipico": null,
+              "comentario": "A frase fica no que foi medido (uma tarefa de atenção sustentada, em aplicação individual) e usa a faixa informada pelo instrumento."
+            },
+            {
+              "texto": "A atenção da pessoa está comprovadamente acima da média, já que 108 é maior que 100.",
+              "correta": false, "erro_tipico": "ignora_erro_medida",
+              "comentario": "O intervalo de confiança começa em 100, a média da escala. O resultado é compatível com desempenho médio."
+            },
+            {
+              "texto": "O resultado mostra que a pessoa tem inteligência acima da média.",
+              "correta": false, "erro_tipico": "construto_nao_medido",
+              "comentario": "A escala mede atenção sustentada. Inteligência é outro construto, que não foi avaliado."
+            },
+            {
+              "texto": "Como a atenção está preservada, a dificuldade de concentração no trabalho é causada pela ansiedade.",
+              "correta": false, "erro_tipico": "inferencia_causal",
+              "comentario": "A explicação é uma hipótese plausível, mas os escores não a demonstram. A queixa no trabalho pede outras fontes, como entrevista e descrição da rotina."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perfil-c",
+      "descricao": "Adolescente de 15 anos, 1º ano do ensino médio. Avaliação em contexto escolar, solicitada pela família por queda no rendimento.",
+      "instrumentos": [
+        {
+          "nome": "Teste Fictício de Compreensão de Leitura (TFCL)",
+          "ficticio": true,
+          "construto": "Compreensão de leitura",
+          "metrica": "Escore padrão, média 100, desvio padrão 15",
+          "medidas": [
+            { "id": "c1", "rotulo": "Compreensão de leitura", "bruto": 18, "percentil": 3, "escore_padrao": 72, "ic95": [64, 80], "faixa": "Inferior" }
+          ]
+        },
+        {
+          "nome": "Escala Fictícia de Motivação para Aprender (EFMA)",
+          "ficticio": true,
+          "construto": "Motivação para aprender (autorrelato)",
+          "metrica": "Escore T, média 50, desvio padrão 10",
+          "medidas": [
+            { "id": "c2", "rotulo": "Motivação para aprender", "bruto": 35, "percentil": 18, "escore_padrao": 41, "ic95": [35, 47], "faixa": "Média inferior" }
+          ]
+        }
+      ],
+      "questoes": [
+        {
+          "medida": "c1",
+          "enunciado": "Em compreensão de leitura, o adolescente obteve percentil 3. Qual frase descreve esse resultado?",
+          "alternativas": [
+            {
+              "texto": "O desempenho foi igual ou superior ao de 3% dos estudantes da amostra normativa, posição bem abaixo da média.",
+              "correta": true, "erro_tipico": null,
+              "comentario": "O percentil 3 corresponde a quase dois desvios padrão abaixo da média. A frase descreve a posição sem concluir sobre a origem da dificuldade."
+            },
+            {
+              "texto": "O adolescente acertou 3% das questões de leitura.",
+              "correta": false, "erro_tipico": "percentil_como_acerto",
+              "comentario": "O percentil não informa a proporção de acertos. O escore bruto foi de 18 pontos."
+            },
+            {
+              "texto": "O resultado confirma dislexia.",
+              "correta": false, "erro_tipico": "limitrofe_como_diagnostico",
+              "comentario": "Um escore baixo em compreensão de leitura é compatível com várias explicações. O diagnóstico exige história do desenvolvimento, outras medidas e critérios próprios."
+            },
+            {
+              "texto": "O escore é baixo porque o adolescente não se esforça na escola.",
+              "correta": false, "erro_tipico": "inferencia_causal",
+              "comentario": "O teste descreve o desempenho. O motivo do desempenho baixo é uma pergunta para as outras etapas da avaliação."
+            }
+          ]
+        },
+        {
+          "medida": "c1",
+          "comparar": "c2",
+          "enunciado": "O perfil traz escore padrão 72 em compreensão de leitura e escore T 41 em motivação para aprender. Qual leitura é adequada?",
+          "alternativas": [
+            {
+              "texto": "Em desvios padrão, a leitura está cerca de 1,9 abaixo da média e a motivação, 0,9 abaixo. O escore de leitura é o mais distante da média.",
+              "correta": true, "erro_tipico": null,
+              "comentario": "A conversão para a mesma unidade permite situar os dois resultados: (72 − 100) ÷ 15 ≈ −1,9 e (41 − 50) ÷ 10 = −0,9."
+            },
+            {
+              "texto": "Como 72 é maior que 41, a leitura está melhor que a motivação.",
+              "correta": false, "erro_tipico": "metricas_diferentes",
+              "comentario": "As escalas têm métricas diferentes. Em relação à média de cada uma, o resultado de leitura é o mais baixo."
+            },
+            {
+              "texto": "A baixa motivação causou a dificuldade de leitura.",
+              "correta": false, "erro_tipico": "inferencia_causal",
+              "comentario": "Os escores não indicam direção de causa. A relação pode ser inversa, ou os dois resultados podem ter outra origem."
+            },
+            {
+              "texto": "Os dois escores abaixo da média mostram baixa capacidade intelectual.",
+              "correta": false, "erro_tipico": "construto_nao_medido",
+              "comentario": "Nenhum dos dois instrumentos mede inteligência."
+            }
+          ]
+        },
+        {
+          "medida": "c2",
+          "enunciado": "Há um ano, na mesma escala, o adolescente obteve escore T 44 em motivação para aprender. Agora obteve 41, com intervalo de confiança de 35 a 47. O que se pode afirmar?",
+          "alternativas": [
+            {
+              "texto": "A diferença de 3 pontos é menor que a imprecisão da medida. Os dois resultados não permitem afirmar que a motivação mudou.",
+              "correta": true, "erro_tipico": null,
+              "comentario": "O escore anterior (44) está dentro do intervalo de confiança do escore atual. Diferenças desse tamanho são esperadas mesmo sem mudança real."
+            },
+            {
+              "texto": "A motivação do adolescente diminuiu no último ano.",
+              "correta": false, "erro_tipico": "ignora_erro_medida",
+              "comentario": "A frase trata uma diferença de 3 pontos como mudança real, sem considerar o erro de medida."
+            },
+            {
+              "texto": "As notas baixas fizeram a motivação cair.",
+              "correta": false, "erro_tipico": "inferencia_causal",
+              "comentario": "A frase supõe uma queda que os dados não sustentam e ainda atribui a ela uma causa."
+            },
+            {
+              "texto": "O escore indica que o adolescente está deprimido.",
+              "correta": false, "erro_tipico": "construto_nao_medido",
+              "comentario": "A escala mede motivação para aprender. Humor deprimido é outro construto e pede investigação própria."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perfil-d",
+      "descricao": "Idoso de 71 anos, 8 anos de escolaridade. Avaliação em contexto de saúde, com queixa de esquecimentos relatada pela família.",
+      "instrumentos": [
+        {
+          "nome": "Rastreio Fictício de Memória Episódica (RFME)",
+          "ficticio": true,
+          "construto": "Memória episódica verbal (rastreio)",
+          "metrica": "Escore padrão, média 100, desvio padrão 15",
+          "medidas": [
+            { "id": "d1", "rotulo": "Evocação imediata", "bruto": 19, "percentil": 21, "escore_padrao": 88, "ic95": [80, 96], "faixa": "Média inferior" },
+            { "id": "d2", "rotulo": "Evocação tardia", "bruto": 5, "percentil": 2, "escore_padrao": 70, "ic95": [62, 78], "faixa": "Limítrofe" }
+          ]
+        }
+      ],
+      "questoes": [
+        {
+          "medida": "d2",
+          "enunciado": "Em evocação tardia, o escore padrão foi 70 (percentil 2, intervalo de 62 a 78). Qual frase é adequada para um instrumento de rastreio?",
+          "alternativas": [
+            {
+              "texto": "O desempenho em evocação tardia ficou bem abaixo do esperado para a idade e a escolaridade nesta tarefa, o que indica necessidade de investigação mais detalhada.",
+              "correta": true, "erro_tipico": null,
+              "comentario": "O resultado de um rastreio serve para indicar se é preciso investigar. A frase descreve a posição do escore e aponta esse passo."
+            },
+            {
+              "texto": "O resultado confirma um quadro de demência.",
+              "correta": false, "erro_tipico": "limitrofe_como_diagnostico",
+              "comentario": "Um rastreio não estabelece diagnóstico. O quadro depende de avaliação ampla, que inclui funcionalidade, história clínica e exames."
+            },
+            {
+              "texto": "O idoso conseguiu lembrar apenas 2% das palavras apresentadas.",
+              "correta": false, "erro_tipico": "percentil_como_acerto",
+              "comentario": "O percentil 2 indica a posição na amostra normativa. O número de palavras evocadas está no escore bruto (5)."
+            },
+            {
+              "texto": "O resultado mostra que o isolamento social prejudicou a memória do idoso.",
+              "correta": false, "erro_tipico": "inferencia_causal",
+              "comentario": "O escore não informa a origem do desempenho. Fatores associados são hipóteses a examinar com a história e com outras fontes."
+            }
+          ]
+        },
+        {
+          "medida": "d1",
+          "enunciado": "Em evocação imediata, o escore padrão foi 88, com intervalo de confiança de 80 a 96 e faixa média inferior. Nesse instrumento, a faixa média começa em 90. Qual frase é adequada?",
+          "alternativas": [
+            {
+              "texto": "O escore situa-se na faixa média inferior, e o intervalo de confiança alcança a faixa média. A classificação deve ser relatada junto com o intervalo.",
+              "correta": true, "erro_tipico": null,
+              "comentario": "O intervalo cruza o limite entre duas faixas. Relatar só o rótulo esconde essa imprecisão."
+            },
+            {
+              "texto": "A evocação imediata está abaixo do normal, sem margem para dúvida.",
+              "correta": false, "erro_tipico": "ignora_erro_medida",
+              "comentario": "O intervalo de confiança vai até 96, dentro da faixa média. A frase trata o escore obtido como valor exato."
+            },
+            {
+              "texto": "O resultado indica que as funções executivas estão preservadas.",
+              "correta": false, "erro_tipico": "construto_nao_medido",
+              "comentario": "O rastreio mede memória episódica verbal. Funções executivas não foram avaliadas."
+            },
+            {
+              "texto": "O idoso lembrou 88% do material apresentado.",
+              "correta": false, "erro_tipico": "percentil_como_acerto",
+              "comentario": "O escore padrão indica distância da média da amostra normativa. Ele não é uma porcentagem de acertos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perfil-e",
+      "descricao": "Adulta de 28 anos. Avaliação em contexto organizacional, em processo seletivo para vaga de analista.",
+      "instrumentos": [
+        {
+          "nome": "Teste Fictício de Raciocínio Abstrato (TFRA)",
+          "ficticio": true,
+          "construto": "Raciocínio abstrato",
+          "metrica": "Escore padrão, média 100, desvio padrão 15",
+          "medidas": [
+            { "id": "e1", "rotulo": "Raciocínio abstrato", "bruto": 33, "percentil": 84, "escore_padrao": 115, "ic95": [107, 123], "faixa": "Média superior" }
+          ]
+        }
+      ],
+      "questoes": [
+        {
+          "medida": "e1",
+          "enunciado": "Em raciocínio abstrato, a candidata obteve percentil 84 (escore padrão 115, intervalo de 107 a 123). Qual frase é adequada?",
+          "alternativas": [
+            {
+              "texto": "O desempenho em raciocínio abstrato foi igual ou superior ao de 84% da amostra normativa, cerca de um desvio padrão acima da média.",
+              "correta": true, "erro_tipico": null,
+              "comentario": "A frase descreve a posição do escore em relação à norma e fica no construto medido."
+            },
+            {
+              "texto": "A candidata acertou 84% dos itens do teste.",
+              "correta": false, "erro_tipico": "percentil_como_acerto",
+              "comentario": "O percentil não informa a proporção de acertos."
+            },
+            {
+              "texto": "O resultado mostra que a candidata terá bom desempenho no cargo.",
+              "correta": false, "erro_tipico": "construto_nao_medido",
+              "comentario": "O teste mede raciocínio abstrato. Desempenho no cargo depende de outros fatores, e a previsão só se sustenta com evidência de validade para esse uso."
+            },
+            {
+              "texto": "O raciocínio abstrato da candidata é exatamente 115, superior ao de qualquer candidato com escore 112.",
+              "correta": false, "erro_tipico": "ignora_erro_medida",
+              "comentario": "Uma diferença de 3 pontos é menor que a imprecisão da medida. O intervalo de 107 a 123 inclui o valor 112."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
