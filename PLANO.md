@@ -128,8 +128,8 @@ Critério de pronto: 10 construtos no ar, rotina mensal funcionando.
 
 ## Pendências que dependem do supervisor
 
-1. Contexto do estágio (clínica-escola, escola, outro) e faixa etária mais comum, para o caso 01.
-2. Instrumentos que os estagiários de fato usam, para os instrumentos fictícios do caso terem estrutura parecida.
+1. ~~Contexto do estágio e faixa etária.~~ Resolvido em 14/11/2026: clínica-escola; crianças, adolescentes e adultos. Demandas: TDAH (principal), inteligência, habilidades sociais. Origem da demanda: médica, escolar, orientação profissional e procura espontânea de quem suspeita de TDAH ou TEA.
+2. ~~Instrumentos que os estagiários usam.~~ Resolvido em 14/11/2026, pelo acervo do laboratório (LAPPATs): BPA-2, ETDAH-AD, escala de TDAH (manual), WISC-IV, WAIS-III, G-36, BAI, EBADEP-A, EBADEP-IJ, EAG-I, ISSL-R, BFP, EMEP, HTP, SAT, CLIMOR. Os instrumentos fictícios dos casos seguem os construtos desse acervo; os nomes reais só entram no fichário de construtos.
 3. Revisor de conteúdo: quem supervisiona Avaliação Psicológica revisa casos e gabaritos antes da publicação. O campo `revisado_por` do caso fica vazio até lá, e a página mostra "em revisão".
 4. ~~Nome do repositório e do site.~~ Resolvido: repositório `gabrielfortes-xdglab/avaliacao-psicologica`.
 
