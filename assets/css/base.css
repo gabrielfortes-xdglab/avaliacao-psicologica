@@ -54,7 +54,7 @@ a{color:var(--teal)}
   font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--teal);font-weight:600;
 }
-.voltar{font-size:13px;font-weight:600;text-decoration:none}
+.voltar{font-size:13.5px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;align-self:flex-start}
 .voltar:hover{text-decoration:underline}
 h1{
   font-family:var(--font-display);
@@ -191,7 +191,13 @@ input[type=search]{
   color:var(--teal);margin-top:6px;
 }
 .termo-ficha dt.dt-erro{color:var(--erro)}
-.relacionados{font-size:13.5px;color:var(--ink-soft)}
+.relacionados{font-size:13.5px;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.relacionados a{
+  display:inline-flex;align-items:center;min-height:40px;padding:4px 14px;
+  border:1px solid #9FB0AC;border-radius:99px;background:var(--card);
+  text-decoration:none;font-weight:600;
+}
+.relacionados a:hover{background:var(--teal-soft)}
 
 /* ======= Termo do glossário dentro de outras páginas ======= */
 .gl{position:relative;display:inline}
@@ -208,7 +214,9 @@ input[type=search]{
   flex-direction:column;gap:6px;
 }
 .gl-def a{color:#9FE3D6;font-weight:600}
-.gl:hover .gl-def,.gl:focus-within .gl-def,.gl.aberto .gl-def{display:flex}
+.gl-def strong{color:#fff !important}
+.gl.aberto .gl-def{display:flex}
+@media (hover:hover){.gl:hover .gl-def,.gl:focus-within .gl-def{display:flex}}
 
 /* ======= Interpretação de escores ======= */
 .progresso{font-size:13px;font-weight:600;color:var(--teal);letter-spacing:.04em;text-transform:uppercase}
@@ -227,9 +235,11 @@ table.medidas tr.em-foco td,table.medidas tr.em-foco th{background:var(--teal-so
 .curva .ic{fill:var(--teal);opacity:.22}
 .curva .marca{stroke:var(--teal);stroke-width:2.5}
 .curva .eixo{stroke:var(--line);stroke-width:1}
-.curva text{font-size:12px;fill:var(--ink-soft);font-family:var(--font-body)}
-.curva text.valor{fill:var(--teal);font-weight:700;font-size:13px}
-.curva text.titulo{fill:var(--ink);font-weight:600}
+.curva .media{stroke:var(--ink-soft);stroke-width:1;stroke-dasharray:4 4}
+.curva text{font-size:13px;fill:var(--ink-soft);font-family:var(--font-body)}
+.curva-figura{display:flex;flex-direction:column;gap:6px}
+.curva-figura figcaption{font-size:14px;color:var(--teal)}
+.curva-figura figcaption strong{color:var(--ink)}
 
 .enunciado{font-size:16px;font-weight:600;line-height:1.4}
 .alternativas{list-style:none;display:flex;flex-direction:column;gap:10px}
@@ -265,6 +275,26 @@ table.medidas tr.em-foco td,table.medidas tr.em-foco th{background:var(--teal-so
   .app{padding:32px 16px 70px;gap:26px}
   .grid{grid-template-columns:1fr}
   .tool{min-height:0}
+  .cartao{padding:16px}
+  .barra .botao,.acoes .botao{width:100%}
+
+  /* Números do eixo: o SVG encolhe com a tela, então a fonte cresce para compensar. */
+  .curva text{font-size:24px}
+
+  /* Tabela de medidas vira uma ficha por medida, sem rolagem lateral. */
+  table.medidas thead{position:absolute;left:-9999px}
+  table.medidas,table.medidas tbody,table.medidas tr,table.medidas th,table.medidas td{display:block}
+  table.medidas tr{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+  table.medidas tr.em-foco{border-color:var(--teal);background:var(--teal-soft)}
+  table.medidas th,table.medidas td{border:0;padding:0;background:none !important}
+  table.medidas th[scope=row]{font-size:14.5px;padding-bottom:6px}
+  table.medidas td{display:flex;justify-content:space-between;gap:12px;padding:3px 0;font-size:14px}
+  table.medidas td::before{content:attr(data-rotulo);color:var(--ink-soft);font-weight:400}
+  table.medidas tr.em-foco td{font-weight:600}
+
+  /* Definição do termo do glossário: fixa no rodapé da tela. */
+  .gl-def{position:fixed;left:12px !important;right:12px;bottom:12px;top:auto;width:auto;font-size:14px;padding:14px 16px}
+  .gl-def a{display:inline-flex;align-items:center;min-height:40px}
 }
 
 @media (prefers-reduced-motion:reduce){

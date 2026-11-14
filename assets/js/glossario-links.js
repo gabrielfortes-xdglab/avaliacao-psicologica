@@ -47,11 +47,22 @@
       el("a", { href: AP.url("ferramentas/glossario.html#" + termo.id), text: textos.ver_no_glossario })
     ]);
     var envolve = el("span", { class: "gl" }, [botao, caixa]);
+    // Em tela larga, puxa a caixa para a esquerda se ela passar da borda direita.
+    // Em tela estreita o CSS fixa a caixa no rodapé da tela e ignora este ajuste.
+    function ajustar() {
+      caixa.style.left = "";
+      var r = caixa.getBoundingClientRect();
+      var sobra = r.right - (document.documentElement.clientWidth - 8);
+      if (r.width && sobra > 0) caixa.style.left = -sobra + "px";
+    }
+    envolve.addEventListener("mouseenter", ajustar);
+    botao.addEventListener("focus", ajustar);
     botao.addEventListener("click", function (ev) {
       ev.stopPropagation();
       var abrir = !envolve.classList.contains("aberto");
       fecharTodos(envolve);
       envolve.classList.toggle("aberto", abrir);
+      if (abrir) ajustar();
       botao.setAttribute("aria-expanded", String(abrir));
     });
     caixa.addEventListener("click", function (ev) { ev.stopPropagation(); });

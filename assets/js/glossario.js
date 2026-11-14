@@ -45,9 +45,9 @@
           el("dt", { class: "dt-erro", text: t.erro }), el("dd", { text: x.erro_comum })
         ]),
         relacionados.length ? el("p", { class: "relacionados" }, [
-          el("span", { text: t.relacionados + ": " })
-        ].concat(relacionados.map(function (r, i) {
-          return el("span", {}, [i ? ", " : "", el("a", { href: "#" + r, text: porId[r].termo })]);
+          el("span", { text: t.relacionados + ":" })
+        ].concat(relacionados.map(function (r) {
+          return el("a", { href: "#" + r, text: porId[r].termo });
         }))) : null
       ]);
       principal.appendChild(artigo);

@@ -54,34 +54,35 @@
     var mt = lerMetrica(item.instrumento.metrica);
     if (!mt) return null;
     var m = item.medida;
-    var L = 600, A = 190, esq = 20, dir = 580, base = 140, topo = 34, zmax = 3.5;
+    var L = 600, A = 172, esq = 20, dir = 580, base = 138, topo = 22, zmax = 3.5;
     function x(z) { return esq + (Math.max(-zmax, Math.min(zmax, z)) + zmax) / (2 * zmax) * (dir - esq); }
     function y(z) { return base - Math.exp(-z * z / 2) * (base - topo); }
     function z(v) { return (v - mt.media) / mt.dp; }
 
     var pontos = [];
     for (var i = -zmax; i <= zmax + 0.001; i += 0.1) pontos.push(x(i).toFixed(1) + "," + y(i).toFixed(1));
-    var descricao = m.rotulo + ": " + t.curva_escore + " " + numero(m.escore_padrao) + ", " + t.curva_ic + " " +
-      numero(m.ic95[0]) + " a " + numero(m.ic95[1]) + ", " + t.curva_media + " " + numero(mt.media) + ". " + t.curva_descricao;
+    var resumo = t.curva_escore + " " + numero(m.escore_padrao) + " · " + t.curva_ic + " " +
+      numero(m.ic95[0]) + " a " + numero(m.ic95[1]) + " · " + t.curva_media + " " + numero(mt.media);
 
-    var g = svg("svg", { viewBox: "0 0 " + L + " " + A, class: "curva", role: "img", "aria-label": descricao });
-    g.appendChild(svg("text", { x: esq, y: 16, class: "titulo" }, m.rotulo));
+    var g = svg("svg", { viewBox: "0 0 " + L + " " + A, class: "curva", role: "img",
+      "aria-label": m.rotulo + ": " + resumo + ". " + t.curva_descricao });
     g.appendChild(svg("polygon", { class: "area", points: esq + "," + base + " " + pontos.join(" ") + " " + dir + "," + base }));
     var x0 = x(z(m.ic95[0])), x1 = x(z(m.ic95[1]));
-    g.appendChild(svg("rect", { class: "ic", x: x0, y: topo - 6, width: Math.max(2, x1 - x0), height: base - topo + 6 }));
+    g.appendChild(svg("rect", { class: "ic", x: x0, y: topo - 8, width: Math.max(2, x1 - x0), height: base - topo + 8 }));
     g.appendChild(svg("polyline", { class: "linha", points: pontos.join(" ") }));
+    g.appendChild(svg("line", { class: "media", x1: x(0), y1: topo, x2: x(0), y2: base }));
     g.appendChild(svg("line", { class: "eixo", x1: esq, y1: base, x2: dir, y2: base }));
     for (var k = -3; k <= 3; k++) {
       g.appendChild(svg("line", { class: "eixo", x1: x(k), y1: base, x2: x(k), y2: base + 5 }));
-      g.appendChild(svg("text", { x: x(k), y: base + 20, "text-anchor": "middle" }, numero(mt.media + k * mt.dp)));
+      g.appendChild(svg("text", { x: x(k), y: base + 28, "text-anchor": "middle" }, numero(mt.media + k * mt.dp)));
     }
-    g.appendChild(svg("text", { x: x(0), y: base + 36, "text-anchor": "middle" }, t.curva_media));
     var xe = x(z(m.escore_padrao));
-    g.appendChild(svg("line", { class: "marca", x1: xe, y1: topo - 10, x2: xe, y2: base }));
-    var ancora = xe > dir - 150 ? "end" : "start";
-    g.appendChild(svg("text", { class: "valor", x: xe + (ancora === "end" ? -8 : 8), y: topo - 14, "text-anchor": ancora },
-      t.curva_escore + " " + numero(m.escore_padrao) + " · " + t.curva_ic + " " + numero(m.ic95[0]) + " a " + numero(m.ic95[1])));
-    return g;
+    g.appendChild(svg("line", { class: "marca", x1: xe, y1: topo - 14, x2: xe, y2: base }));
+
+    return el("figure", { class: "curva-figura" }, [
+      el("figcaption", {}, [el("strong", { text: m.rotulo + ": " }), resumo]),
+      g
+    ]);
   }
 
   // Uma tabela por instrumento, com o nome e a métrica acima dela (fora da área de rolagem).
@@ -98,11 +99,11 @@
           el("tbody", {}, inst.medidas.map(function (m) {
             return el("tr", emFoco.indexOf(m.id) !== -1 ? { class: "em-foco" } : {}, [
               el("th", { scope: "row", text: m.rotulo }),
-              el("td", { class: "num", text: numero(m.bruto) }),
-              el("td", { class: "num", text: numero(m.escore_padrao) }),
-              el("td", { class: "num", text: numero(m.percentil) }),
-              el("td", { class: "num", text: numero(m.ic95[0]) + " a " + numero(m.ic95[1]) }),
-              el("td", { text: m.faixa })
+              el("td", { class: "num", "data-rotulo": c.bruto, text: numero(m.bruto) }),
+              el("td", { class: "num", "data-rotulo": c.escore, text: numero(m.escore_padrao) }),
+              el("td", { class: "num", "data-rotulo": c.percentil, text: numero(m.percentil) }),
+              el("td", { class: "num", "data-rotulo": c.ic95, text: numero(m.ic95[0]) + " a " + numero(m.ic95[1]) }),
+              el("td", { "data-rotulo": c.faixa, text: m.faixa })
             ]);
           }))
         ]))
