@@ -131,7 +131,7 @@ Critério de pronto: 10 construtos no ar, rotina mensal funcionando.
 1. Contexto do estágio (clínica-escola, escola, outro) e faixa etária mais comum, para o caso 01.
 2. Instrumentos que os estagiários de fato usam, para os instrumentos fictícios do caso terem estrutura parecida.
 3. Revisor de conteúdo: quem supervisiona Avaliação Psicológica revisa casos e gabaritos antes da publicação. O campo `revisado_por` do caso fica vazio até lá, e a página mostra "em revisão".
-4. Nome do repositório e do site.
+4. ~~Nome do repositório e do site.~~ Resolvido: repositório `gabrielfortes-xdglab/avaliacao-psicologica`.
 
 ## Ordem sugerida de sessões no Claude Code
 
@@ -147,8 +147,8 @@ Ao final de cada fase, atualizar a tabela de status abaixo.
 
 | Fase | Status | Data |
 |---|---|---|
-| 0 | feita em local; falta publicar no GitHub Pages | 2026-11-14 |
-| 1 | feita em local; conteúdo aguarda revisão do supervisor | 2026-11-14 |
+| 0 | feita e publicada (https://gabrielfortes-xdglab.github.io/avaliacao-psicologica/) | 2026-11-14 |
+| 1 | feita e publicada; conteúdo aguarda revisão do supervisor | 2026-11-14 |
 | 2 | a fazer | |
 | 3 | a fazer | |
 | 4 | a fazer | |
