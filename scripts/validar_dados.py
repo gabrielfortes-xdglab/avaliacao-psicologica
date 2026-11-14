@@ -197,6 +197,25 @@ def validar_escores(ids_glossario):
     print("escores.json: %d questões no modo livre." % total)
 
 
+# ---------------------------------------------------------- simuladores.json
+def validar_simuladores():
+    d, c = ler(DADOS / "simuladores.json")
+    if d is None:
+        return
+    for secao in ("comum", "planejamento", "anamnese", "caso"):
+        if not isinstance(d.get(secao), dict) or not d[secao]:
+            c.erro("raiz", "falta a seção de textos '%s'" % secao)
+    for e in sorted(ETAPAS):
+        if e not in d.get("caso", {}).get("etapas", {}):
+            c.erro("caso.etapas", "falta o nome da etapa '%s'" % e)
+    for tp in sorted(TIPOS_PERGUNTA):
+        if tp not in d.get("anamnese", {}).get("tipos", {}):
+            c.erro("anamnese.tipos", "falta o tipo de pergunta '%s'" % tp)
+    for tp in sorted(TIPOS_PROCEDIMENTO):
+        if tp not in d.get("planejamento", {}).get("tipos", {}):
+            c.erro("planejamento.tipos", "falta o tipo de procedimento '%s'" % tp)
+
+
 # ----------------------------------------------------------- construtos.json
 def validar_construtos():
     d, c = ler(DADOS / "construtos.json")
@@ -522,6 +541,7 @@ def main():
     validar_site()
     ids_glossario = validar_glossario()
     validar_escores(ids_glossario or set())
+    validar_simuladores()
     validar_construtos()
     validar_documentos()
     validar_satepsi()

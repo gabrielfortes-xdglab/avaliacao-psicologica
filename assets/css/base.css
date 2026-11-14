@@ -270,6 +270,72 @@ table.medidas tr.em-foco td,table.medidas tr.em-foco th{background:var(--teal-so
 .placar{font-family:var(--font-display);font-size:28px;font-weight:700}
 [hidden]{display:none !important}
 
+/* ======= Ferramentas com caso (planejamento, anamnese, caso progressivo) ======= */
+.area{display:flex;flex-direction:column;gap:16px}
+.area:focus{outline:none}
+fieldset.cartao{min-width:0}
+fieldset.cartao legend{float:left;width:100%;padding:0}
+fieldset.cartao legend + *{clear:both}
+h3.grupo-comparacao{
+  font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--teal);margin-top:8px;
+}
+h3.grupo-comparacao.so_ref,h3.grupo-comparacao.so_seu{color:var(--alerta)}
+.pares{display:flex;flex-direction:column;gap:2px}
+.pares dt{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-top:6px}
+
+.lista-casos{list-style:none;display:flex;flex-direction:column;gap:14px}
+.caso-link{text-decoration:none;color:inherit}
+.caso-link:hover{border-color:#BFCBC8}
+.caso-link .abrir{font-size:13.5px;font-weight:600;color:var(--teal)}
+
+.opcoes{display:flex;flex-direction:column;gap:8px}
+.opcao{
+  display:flex;gap:12px;align-items:flex-start;cursor:pointer;
+  border:1.5px solid #9FB0AC;border-radius:12px;padding:12px 14px;min-height:48px;background:var(--card);
+}
+.opcao:hover{border-color:var(--teal)}
+.opcao:has(input:checked){border-color:var(--teal);background:var(--teal-soft)}
+.opcao input{width:20px;height:20px;margin-top:2px;flex:none;accent-color:var(--teal)}
+.opcao-texto{display:flex;flex-direction:column;gap:2px}
+.contador{font-weight:700;font-size:15px;color:var(--teal)}
+.contador.excedeu{color:var(--erro)}
+
+.cobertura{list-style:none;display:flex;flex-direction:column;gap:10px}
+.cobertura > li{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.cobertura > li.sem-fonte{border-color:#E9D3A0;background:var(--alerta-soft)}
+.fontes{padding-left:20px;font-size:14px}
+.alerta-texto{color:var(--alerta);font-weight:600;font-size:14px}
+
+.conversa{display:flex;flex-direction:column;gap:10px}
+.fala{max-width:88%;border-radius:12px;padding:10px 14px;display:flex;flex-direction:column;gap:2px}
+.fala.informante{background:var(--paper);border:1px solid var(--line);align-self:flex-start}
+.fala.estudante{background:var(--teal-soft);border:1px solid #BFD6D1;align-self:flex-end;scroll-margin-top:12px}
+.quem{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.escolha{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:14px}
+
+.tipo-linha{display:flex;flex-direction:column;gap:4px}
+.barra-tipo{height:8px;border-radius:99px;background:var(--paper);overflow:hidden}
+.barra-tipo span{display:block;height:100%;background:var(--teal)}
+.tipo-linha.indutiva .barra-tipo span{background:var(--alerta)}
+.etiqueta.tipo-aberta,.etiqueta.tipo-fechada{color:var(--teal);background:var(--teal-soft);border-color:#BFD6D1}
+.transcricao{padding-left:22px;display:flex;flex-direction:column;gap:10px;font-size:14px}
+
+textarea{
+  font:inherit;width:100%;padding:10px 12px;min-height:110px;resize:vertical;
+  border:1px solid #9FB0AC;border-radius:10px;background:var(--card);color:var(--ink);
+}
+.hipotese-cartao{border-color:var(--teal)}
+.hipotese-cartao label{font-size:14px}
+.linha-tempo{list-style:none;display:flex;flex-direction:column;gap:14px}
+.linha-tempo > li{border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:8px}
+.linha-tempo h3{font-family:var(--font-display);font-size:16px;font-weight:600}
+.lado-a-lado{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lado-a-lado > div{border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:4px;font-size:14px}
+.lado-a-lado .sua{background:var(--teal-soft)}
+.lado-a-lado .ref{background:var(--paper);border:1px solid var(--line)}
+.texto-livre{white-space:pre-wrap;overflow-wrap:anywhere}
+
 /* ======= Tela estreita: coluna única ======= */
 @media (max-width:720px){
   .app{padding:32px 16px 70px;gap:26px}
@@ -292,6 +358,9 @@ table.medidas tr.em-foco td,table.medidas tr.em-foco th{background:var(--teal-so
   table.medidas td::before{content:attr(data-rotulo);color:var(--ink-soft);font-weight:400}
   table.medidas tr.em-foco td{font-weight:600}
 
+  .lado-a-lado{grid-template-columns:1fr}
+  .fala{max-width:96%}
+
   /* Definição do termo do glossário: fixa no rodapé da tela. */
   .gl-def{position:fixed;left:12px !important;right:12px;bottom:12px;top:auto;width:auto;font-size:14px;padding:14px 16px}
   .gl-def a{display:inline-flex;align-items:center;min-height:40px}
@@ -306,7 +375,9 @@ table.medidas tr.em-foco td,table.medidas tr.em-foco th{background:var(--teal-so
   body{background:#fff;font-size:11pt}
   .app{max-width:none;padding:0;min-height:0;gap:16pt}
   .pular,.voltar,.nao-imprimir,.gl-def{display:none !important}
-  .termo-ficha,.cartao{box-shadow:none;break-inside:avoid}
+  .termo-ficha{box-shadow:none;break-inside:avoid}
+  .cartao{box-shadow:none}
+  .linha-tempo > li,.cobertura > li,.resumo-lista li{break-inside:avoid}
   .termo-ficha[hidden]{display:none !important}
   .gl-termo{text-decoration:none}
   .tool,.aviso{box-shadow:none;break-inside:avoid}

@@ -1,0 +1,149 @@
+{
+  "comum": {
+    "aviso_ficticio": "Pessoas, instrumentos e resultados deste caso são fictícios.",
+    "caso": "Caso",
+    "trocar_caso": "Escolher outro caso",
+    "escolher_caso": "Escolha um caso para começar.",
+    "sem_casos": "Ainda não há caso publicado para esta ferramenta.",
+    "caso_sem_bloco": "Este caso não tem o conteúdo que esta ferramenta usa.",
+    "abrir_caso": "Abrir caso",
+    "contextos": {
+      "clinico": "Contexto clínico",
+      "escolar": "Contexto escolar",
+      "organizacional": "Contexto organizacional",
+      "transito": "Trânsito",
+      "forense": "Contexto forense",
+      "saude": "Saúde"
+    },
+    "faixas": {
+      "crianca": "Criança",
+      "adolescente": "Adolescente",
+      "adulto": "Adulto",
+      "idoso": "Idoso"
+    },
+    "demanda_titulo": "Demanda",
+    "solicitante": "Quem solicita",
+    "pergunta_de_avaliacao": "Pergunta de avaliação",
+    "sessao_meia": "meia sessão",
+    "sessao_uma": "1 sessão",
+    "sessoes": "sessões",
+    "imprimir": "Imprimir ou salvar em PDF",
+    "recomecar": "Recomeçar",
+    "ficticio": "Fictício",
+    "colunas": {
+      "medida": "Medida",
+      "bruto": "Bruto",
+      "escore": "Escore",
+      "percentil": "Percentil",
+      "ic95": "IC 95%",
+      "faixa": "Faixa"
+    },
+    "ic_a": "a"
+  },
+
+  "planejamento": {
+    "instrucao": "Leia a demanda. Marque as hipóteses que o plano deve investigar e escolha os procedimentos, sem passar do limite de sessões. Depois, veja a cobertura do seu plano e compare com o plano de referência.",
+    "hipoteses_titulo": "Hipóteses a investigar",
+    "hipoteses_instrucao": "Marque as hipóteses que, a partir da demanda, precisam de alguma fonte de informação.",
+    "procedimentos_titulo": "Procedimentos",
+    "procedimentos_instrucao": "Escolha os procedimentos do plano. O limite é de",
+    "tipos": {
+      "entrevista": "Entrevista",
+      "observacao": "Observação",
+      "instrumento": "Instrumento",
+      "fonte_complementar": "Fonte complementar"
+    },
+    "contador": "Sessões usadas:",
+    "de": "de",
+    "excedeu": "O plano passou do limite de sessões. Retire algum procedimento.",
+    "falta_hipotese": "Marque pelo menos uma hipótese.",
+    "falta_procedimento": "Escolha pelo menos um procedimento.",
+    "ver_cobertura": "Ver cobertura e comparar",
+    "cobertura_titulo": "Cobertura do seu plano",
+    "cobertura_instrucao": "Para cada hipótese do caso, os procedimentos que você escolheu e que a informam.",
+    "nao_marcada": "Você não marcou",
+    "sem_fonte": "Sem fonte no seu plano.",
+    "uma_fonte": "Uma única fonte. Sem uma segunda, não há como conferir esse dado.",
+    "sem_uso_titulo": "Procedimentos escolhidos que não informam nenhuma hipótese",
+    "comparacao_titulo": "Comparação com o plano de referência",
+    "seu_plano": "Seu plano",
+    "plano_referencia": "Plano de referência",
+    "grupos": {
+      "ambos": "Você escolheu, e está no plano de referência",
+      "so_seu": "Você escolheu, e não está no plano de referência",
+      "so_ref": "Você não escolheu, e está no plano de referência",
+      "nenhum": "Você não escolheu, e não está no plano de referência"
+    },
+    "justificativa_titulo": "Por que este plano de referência",
+    "nota_referencia": "O plano de referência é um plano possível, e não o único. Leve as diferenças para a supervisão.",
+    "refazer": "Refazer o plano"
+  },
+
+  "anamnese": {
+    "instrucao": "Conduza a entrevista. A cada fala, escolha a próxima pergunta. Não é possível voltar: como em uma entrevista, cada pergunta feita ocupa o lugar de outra. Ao final, veja o que foi coletado.",
+    "entrevista_com": "Entrevista com",
+    "informante": "Informante",
+    "voce": "Você",
+    "escolha": "Escolha a próxima pergunta",
+    "pergunta_numero": "Pergunta",
+    "relatorio_titulo": "Relatório da entrevista",
+    "coletadas_titulo": "Informações coletadas",
+    "de": "de",
+    "nenhuma_coletada": "Nenhuma informação foi coletada.",
+    "essencial": "Essencial",
+    "faltaram_titulo": "Informações essenciais que ficaram de fora",
+    "faltaram_nenhuma": "Nenhuma informação essencial ficou de fora.",
+    "outras_titulo": "Outras informações que não apareceram",
+    "tipos_titulo": "Tipos de pergunta que você fez",
+    "tipos": {
+      "aberta": { "nome": "Aberta", "explicacao": "Convida a pessoa a descrever com as próprias palavras. Costuma trazer mais informação e menos influência do entrevistador." },
+      "fechada": { "nome": "Fechada", "explicacao": "Pede uma resposta curta. Serve para precisar um dado, e rende pouco quando o assunto ainda não foi explorado." },
+      "indutiva": { "nome": "Indutiva", "explicacao": "Sugere a resposta. A pessoa tende a concordar, e o dado obtido deixa de ser confiável." }
+    },
+    "indutivas_titulo": "Perguntas indutivas que você fez",
+    "indutivas_nenhuma": "Você não fez perguntas indutivas.",
+    "transcricao_titulo": "Transcrição",
+    "refazer": "Refazer a entrevista"
+  },
+
+  "caso": {
+    "instrucao": "Percorra o caso etapa por etapa. Ao fim de cada etapa, escreva a hipótese que você sustenta naquele ponto. No final, compare a evolução das suas hipóteses com uma trajetória de referência e gere o PDF para a supervisão.",
+    "privacidade": "O que você escreve fica só nesta página. Nada é enviado nem salvo. Se a página for fechada ou recarregada, o texto se perde.",
+    "etapa": "Etapa",
+    "de": "de",
+    "etapas": {
+      "demanda": "Demanda",
+      "planejamento": "Planejamento",
+      "anamnese": "Anamnese",
+      "resultados": "Resultados",
+      "integracao": "Integração",
+      "laudo": "Laudo"
+    },
+    "instrucoes_etapa": {
+      "demanda": "Leia a demanda como ela chegou ao serviço.",
+      "planejamento": "Monte o plano de avaliação e compare com o plano de referência.",
+      "anamnese": "Conduza a entrevista até o fim e leia o relatório.",
+      "resultados": "Leia os resultados dos instrumentos aplicados.",
+      "integracao": "Leia os achados de cada fonte. Em seguida, escreva a conclusão que você sustenta com o conjunto.",
+      "laudo": "Leia o texto do documento."
+    },
+    "treinar_escores": "Treinar a interpretação destes escores (abre em outra aba)",
+    "fontes_titulo": "Achados por fonte",
+    "hipotese_titulo": "Sua hipótese neste ponto",
+    "hipotese_rotulo": "Escreva, em poucas linhas, o que você pensa agora sobre a pergunta de avaliação e por quê.",
+    "hipotese_vazia": "Escreva sua hipótese antes de avançar.",
+    "avancar": "Registrar e avançar",
+    "concluir": "Registrar e ver a comparação",
+    "final_titulo": "Evolução das hipóteses",
+    "final_instrucao": "Para cada etapa, o que você escreveu e como a hipótese de um avaliador experiente poderia evoluir com os mesmos dados.",
+    "sua_hipotese": "Sua hipótese",
+    "referencia": "Trajetória de referência",
+    "sem_referencia": "Sem referência para esta etapa.",
+    "integracao_titulo": "Integração de referência",
+    "convergencias": "Convergências",
+    "divergencias": "Divergências",
+    "conclusao": "Conclusão de referência",
+    "limites": "Limites",
+    "nota_supervisao": "Leve este material para a supervisão. A trajetória de referência é um apoio para a discussão e não substitui o julgamento do supervisor."
+  }
+}
