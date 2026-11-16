@@ -32,7 +32,8 @@
         t.consultado_em + " " + dataBR(n.consultado_em) + ": ",
         el("a", { href: n.fonte, target: "_blank", rel: "noopener", text: n.fonte_rotulo })
       ]),
-      n.a_confirmar ? el("p", { class: "aviso revisao", role: "note", text: n.nota_confirmar }) : null
+      n.a_confirmar ? el("p", { class: "aviso revisao", role: "note", text: n.nota_confirmar }) : null,
+      !n.a_confirmar && n.vigencia_conferida_em ? el("p", { class: "meta", text: t.vigencia + " " + dataBR(n.vigencia_conferida_em) + "." }) : null
     ]));
 
     // Quadro: qual documento usar.

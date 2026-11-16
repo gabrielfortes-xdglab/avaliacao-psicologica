@@ -6,13 +6,15 @@
     "fonte": "https://site.cfp.org.br/wp-content/uploads/2019/09/Resolução-CFP-n-06-2019-comentada.pdf",
     "fonte_rotulo": "Versão comentada publicada pelo CFP",
     "consultado_em": "2026-11-16",
-    "a_confirmar": true,
-    "nota_confirmar": "O texto abaixo foi conferido na versão comentada publicada pelo CFP em 2019. Falta confirmar, no portal de atos oficiais do CFP, se a resolução segue vigente sem alterações. Confira antes de usar em um documento real."
+    "a_confirmar": false,
+    "vigencia_conferida_em": "2026-11-16",
+    "vigencia_conferida_por": "supervisor responsável pelo site"
   },
   "textos": {
     "instrucao": "Consulte o tipo de documento antes de escrever. Cada ficha traz a finalidade, a estrutura e o artigo da resolução em que a regra está. Ao final, use o checklist antes de assinar.",
     "norma_titulo": "Norma de referência",
     "consultado_em": "Texto consultado em",
+    "vigencia": "Vigência conferida em",
     "quadro_titulo": "Qual documento usar",
     "quadro_instrucao": "A primeira pergunta é se o documento resulta de um processo de avaliação psicológica.",
     "colunas": { "documento": "Documento", "artigo": "Artigo", "avaliacao": "Resulta de avaliação psicológica?", "finalidade": "Para que serve" },

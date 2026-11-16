@@ -154,7 +154,7 @@
   },
   "laudo": {
     "instrucao": "Leia o laudo como se fosse revisá-lo antes da assinatura. Marque os parágrafos que têm problema e escolha o tipo de erro de cada um. Depois, veja o gabarito comentado.",
-    "norma": "As regras citadas no gabarito são da Resolução CFP n.º 6, de 29 de março de 2019. Confira a vigência antes de usar em um documento real.",
+    "norma": "As regras citadas no gabarito são da Resolução CFP n.º 6, de 29 de março de 2019.",
     "tipos_titulo": "Tipos de erro",
     "marcar": "Este parágrafo tem problema",
     "escolha_tipo": "Tipo de erro",

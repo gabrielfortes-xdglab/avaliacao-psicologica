@@ -10,7 +10,7 @@ Oito ferramentas em três grupos.
 |---|---|---|---|
 | Simuladores | 1 | Planejamento de avaliação | `ferramentas/planejamento.html` |
 | Simuladores | 2 | Anamnese ramificada | `ferramentas/anamnese.html` |
-| Simuladores | 3 | Interpretação de escores | `ferramentas/escores.html` |
+| Simuladores | 3 | feita e publicada; vigência da Resolução 06/2019 confirmada pelo supervisor; conteúdo aguarda revisão | 2026-11-16 |
 | Banco de conhecimento | 4 | Fichário de construtos (atualização automática) | `ferramentas/construtos.html` |
 | Banco de conhecimento | 5 | Glossário psicométrico | `ferramentas/glossario.html` |
 | Banco de conhecimento | 6 | Guia de documentos psicológicos | `ferramentas/documentos.html` |

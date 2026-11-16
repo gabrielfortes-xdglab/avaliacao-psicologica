@@ -8,7 +8,7 @@ Institui regras para a elaboração de documentos escritos produzidos pela(o) ps
 
 - **Fonte lida**: versão comentada publicada pelo CFP, datada de 11 de setembro de 2019, em `https://site.cfp.org.br/wp-content/uploads/2019/09/Resolução-CFP-n-06-2019-comentada.pdf`. Consulta em 16/11/2026.
 - **Publicação**: Diário Oficial da União de 1º de abril de 2019, segundo notícia do CFP de 03/04/2019.
-- **Vigência atual: a confirmar.** O portal de atos oficiais do CFP (`atosoficiais.com.br/cfp`) bloqueia leitura automática. As buscas feitas em 16/11/2026 não encontraram ato que a revogue ou altere, mas isso não substitui a conferência no portal.
+- **Vigência**: o supervisor responsável pelo site (Gabriel) informou, em 16/11/2026, que a 06/2019 é a versão mais atual. O portal de atos oficiais do CFP (`atosoficiais.com.br/cfp`) bloqueia leitura automática, então a conferência foi feita por ele. Reconferir a cada semestre.
 
 ### O que o texto diz (com artigo)
 
