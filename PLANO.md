@@ -150,6 +150,6 @@ Ao final de cada fase, atualizar a tabela de status abaixo.
 | 0 | feita e publicada (https://gabrielfortes-xdglab.github.io/avaliacao-psicologica/) | 2026-11-14 |
 | 1 | feita e publicada; conteúdo aguarda revisão do supervisor | 2026-11-14 |
 | 2 | feita e publicada; caso 01 aguarda revisão do supervisor | 2026-11-14 |
-| 3 | a fazer | |
+| 3 | feita, só no computador (não publicada); vigência da Resolução 06/2019 a confirmar; conteúdo aguarda revisão | 2026-11-16 |
 | 4 | a fazer | |
 | 5 | a fazer | |

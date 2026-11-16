@@ -71,7 +71,7 @@
           "nome": "Guia de documentos psicológicos",
           "descricao": "Tipos de documento previstos pelo CFP, com finalidade, estrutura e quando usar. Trechos bem e mal redigidos lado a lado e checklist antes de assinar.",
           "pagina": "ferramentas/documentos.html",
-          "status": "em_desenvolvimento"
+          "status": "no_ar"
         }
       ]
     },
@@ -92,7 +92,7 @@
           "nome": "Laudos com erros",
           "descricao": "Marque os parágrafos problemáticos de um laudo fictício e classifique o tipo de erro. O gabarito comenta acertos, erros não percebidos e falsos alarmes.",
           "pagina": "ferramentas/laudo.html",
-          "status": "em_desenvolvimento"
+          "status": "no_ar"
         }
       ]
     }

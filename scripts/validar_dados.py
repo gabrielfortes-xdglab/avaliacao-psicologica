@@ -211,6 +211,9 @@ def validar_simuladores():
     for tp in sorted(TIPOS_PERGUNTA):
         if tp not in d.get("anamnese", {}).get("tipos", {}):
             c.erro("anamnese.tipos", "falta o tipo de pergunta '%s'" % tp)
+    for tp in sorted(ERROS_LAUDO):
+        if tp not in d.get("laudo", {}).get("tipos", {}):
+            c.erro("laudo.tipos", "falta o tipo de erro de laudo '%s'" % tp)
     for tp in sorted(TIPOS_PROCEDIMENTO):
         if tp not in d.get("planejamento", {}).get("tipos", {}):
             c.erro("planejamento.tipos", "falta o tipo de procedimento '%s'" % tp)
@@ -251,6 +254,12 @@ def validar_documentos():
             "quando_usar": str, "exemplos": list,
         }) and doc.get("a_confirmar"):
             c.aviso(onde, "conteúdo normativo a confirmar")
+    if d.get("revisado_por") is None:
+        c.aviso("raiz", "sem revisor: a página mostra 'em revisão'")
+    for k, f in enumerate(d["frases"]):
+        c.campos(f, "frases[%d]" % k, {"problematica": str, "descritiva": str, "comentario": str})
+    for k, i in enumerate(d["checklist"]):
+        c.campos(i, "checklist[%d]" % k, {"texto": str, "artigo": str})
 
 
 # -------------------------------------------------------------- satepsi.json

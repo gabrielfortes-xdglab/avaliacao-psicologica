@@ -1,16 +1,229 @@
 {
-  "norma_base": { "referencia": "A confirmar no texto vigente do CFP", "a_confirmar": true },
+  "revisado_por": null,
+  "norma_base": {
+    "referencia": "Resolução CFP n.º 6, de 29 de março de 2019",
+    "ementa": "Institui regras para a elaboração de documentos escritos produzidos pela(o) psicóloga(o) no exercício profissional.",
+    "fonte": "https://site.cfp.org.br/wp-content/uploads/2019/09/Resolução-CFP-n-06-2019-comentada.pdf",
+    "fonte_rotulo": "Versão comentada publicada pelo CFP",
+    "consultado_em": "2026-11-16",
+    "a_confirmar": true,
+    "nota_confirmar": "O texto abaixo foi conferido na versão comentada publicada pelo CFP em 2019. Falta confirmar, no portal de atos oficiais do CFP, se a resolução segue vigente sem alterações. Confira antes de usar em um documento real."
+  },
+  "textos": {
+    "instrucao": "Consulte o tipo de documento antes de escrever. Cada ficha traz a finalidade, a estrutura e o artigo da resolução em que a regra está. Ao final, use o checklist antes de assinar.",
+    "norma_titulo": "Norma de referência",
+    "consultado_em": "Texto consultado em",
+    "quadro_titulo": "Qual documento usar",
+    "quadro_instrucao": "A primeira pergunta é se o documento resulta de um processo de avaliação psicológica.",
+    "colunas": { "documento": "Documento", "artigo": "Artigo", "avaliacao": "Resulta de avaliação psicológica?", "finalidade": "Para que serve" },
+    "sim": "Sim",
+    "nao": "Não",
+    "fichas_titulo": "Fichas dos documentos",
+    "finalidade": "Finalidade",
+    "estrutura": "Estrutura",
+    "quando_usar": "Quando usar",
+    "atencao": "Atenção",
+    "exemplo_titulo": "Trecho de exemplo",
+    "problematico": "Versão com problema",
+    "adequado": "Versão adequada",
+    "frases_titulo": "Frases de laudo: versão com problema e versão descritiva",
+    "frases_instrucao": "Os exemplos são fictícios. A versão descritiva diz o que foi observado ou medido, em que condição e com que fonte.",
+    "descritiva": "Versão descritiva",
+    "checklist_titulo": "Checklist antes de assinar",
+    "checklist_instrucao": "Marque cada item ao conferir. As marcações ficam só nesta página.",
+    "imprimir": "Imprimir ou salvar em PDF",
+    "ficticio": "Os trechos de exemplo são fictícios."
+  },
   "documentos": [
+    {
+      "id": "declaracao",
+      "nome": "Declaração",
+      "artigo": "Art. 9º",
+      "resulta_de_avaliacao": false,
+      "resumo": "Informa comparecimento e acompanhamento, sem conteúdo psicológico.",
+      "finalidade": "Registrar, de forma objetiva e sucinta, informações sobre a prestação de serviço realizado ou em realização: comparecimento da pessoa atendida e de acompanhante, acompanhamento psicológico realizado ou em curso, tempo de acompanhamento, dias e horários (art. 9º).",
+      "estrutura": [
+        "Título: \"Declaração\"",
+        "Nome completo ou nome social da pessoa atendida",
+        "Finalidade: razão ou motivo do documento",
+        "Local, dias, horários e duração do acompanhamento",
+        "Encerramento com local, data de emissão, carimbo com nome e inscrição profissional, e assinatura (art. 9º, § 2º)"
+      ],
+      "quando_usar": "Quando a pessoa precisa comprovar que compareceu ou que está em acompanhamento, por exemplo para justificar ausência no trabalho ou na escola.",
+      "atencao": "É vedado registrar sintomas, situações ou estados psicológicos na declaração (art. 9º, § 1º).",
+      "exemplos": [
+        {
+          "problematico": "Declaro que L. compareceu a este serviço em 10/03, das 14h às 15h, para atendimento em razão de um quadro de ansiedade.",
+          "adequado": "Declaro, para fins de comprovação junto à instituição de ensino, que L. compareceu a este serviço em 10/03, das 14h às 15h, para atendimento psicológico.",
+          "comentario": "A primeira versão registra um estado psicológico, o que a resolução veda na declaração. A segunda informa comparecimento, horário e finalidade."
+        }
+      ]
+    },
+    {
+      "id": "atestado",
+      "nome": "Atestado psicológico",
+      "artigo": "Art. 10",
+      "resulta_de_avaliacao": true,
+      "resumo": "Certifica uma situação ou condição psicológica verificada em avaliação.",
+      "finalidade": "Certificar, com fundamento em um diagnóstico psicológico, uma situação, estado ou funcionamento psicológico, para afirmar as condições psicológicas de quem o solicita. Serve, entre outros fins, para justificar faltas e impedimentos, justificar aptidão ou inaptidão para atividades específicas e solicitar afastamento ou dispensa (art. 10, caput e § 1º).",
+      "estrutura": [
+        "Título: \"Atestado Psicológico\"",
+        "Nome completo ou nome social da pessoa ou instituição atendida",
+        "Nome de quem solicitou o documento",
+        "Finalidade: razão ou motivo do pedido",
+        "Descrição das condições psicológicas, respondendo à finalidade",
+        "Encerramento com local, data, carimbo, inscrição profissional, laudas numeradas e rubricadas, e assinatura (art. 10, § 6º)"
+      ],
+      "quando_usar": "Quando é preciso afirmar uma condição psicológica para um fim definido, e essa condição foi verificada em um processo de avaliação.",
+      "atencao": "O atestado resulta de uma avaliação psicológica. Atesta-se somente o que foi verificado no processo (art. 10, § 2º). O texto é corrido, sem parágrafos, e se restringe à informação solicitada (art. 10, § 5º).",
+      "exemplos": [
+        {
+          "problematico": "Atesto que L. sofre de ansiedade grave desde a infância e que não tem condições de frequentar as aulas neste semestre.",
+          "adequado": "Atesto, para fins de justificativa de ausência junto à instituição de ensino, que L. apresentou, na avaliação realizada entre 03/03 e 14/04, sintomas de ansiedade que justificam seu afastamento das atividades acadêmicas no período de 15/04 a 22/04.",
+          "comentario": "A primeira versão afirma história e prognóstico que a avaliação não verificou. A segunda se limita ao que foi verificado, ao período e à finalidade."
+        }
+      ]
+    },
+    {
+      "id": "relatorio",
+      "nome": "Relatório psicológico",
+      "artigo": "Art. 11",
+      "resulta_de_avaliacao": false,
+      "resumo": "Comunica a atuação profissional em um processo de trabalho.",
+      "finalidade": "Comunicar a atuação profissional em processos de trabalho já desenvolvidos ou em desenvolvimento, por meio de exposição escrita, descritiva e circunstanciada. Pode gerar orientações, recomendações e encaminhamentos. Não tem como finalidade produzir diagnóstico psicológico (art. 11).",
+      "estrutura": [
+        "Identificação: título, pessoa ou instituição atendida, solicitante, finalidade, autora(or) com inscrição no CRP",
+        "Descrição da demanda",
+        "Procedimento",
+        "Análise",
+        "Conclusão (art. 11, § 1º)"
+      ],
+      "quando_usar": "Quando é preciso informar o trabalho realizado: um encaminhamento, a evolução de um acompanhamento, uma visita, um atendimento de acolhimento.",
+      "atencao": "O relatório não corresponde à descrição literal das sessões, salvo quando essa descrição se justifica tecnicamente (art. 11, inciso III). Só se relata o necessário para responder à demanda (art. 11, § 5º, II).",
+      "exemplos": [
+        {
+          "problematico": "Na terceira sessão, L. disse: \"eu não aguento mais a minha chefe\", e depois chorou por dez minutos falando da mãe.",
+          "adequado": "Ao longo dos atendimentos, L. relatou dificuldades na relação com a chefia e sofrimento associado à rotina de trabalho, temas que orientaram as intervenções descritas a seguir.",
+          "comentario": "A primeira versão transcreve a sessão. A segunda comunica o que é necessário para o destinatário entender o trabalho realizado."
+        }
+      ]
+    },
+    {
+      "id": "relatorio-multiprofissional",
+      "nome": "Relatório multiprofissional",
+      "artigo": "Art. 12",
+      "resulta_de_avaliacao": false,
+      "resumo": "Relatório produzido com profissionais de outras áreas.",
+      "finalidade": "Registrar a atuação da(o) psicóloga(o) em contexto multiprofissional. Pode ser produzido em conjunto com profissionais de outras áreas, preservando a autonomia e a ética profissional de cada um (art. 12).",
+      "estrutura": [
+        "Identificação, com o nome e a categoria profissional de cada autora(or)",
+        "Descrição da demanda",
+        "Procedimento",
+        "Análise",
+        "Conclusão (art. 12, § 1º)"
+      ],
+      "quando_usar": "Quando o trabalho foi feito em equipe e o documento precisa reunir a atuação de mais de uma profissão.",
+      "atencao": "Os procedimentos e técnicas privativos da Psicologia são descritos em separado dos demais (art. 12, § 5º). Cada profissional faz a própria análise, identificada com nome e categoria (art. 12, § 6º).",
+      "exemplos": []
+    },
     {
       "id": "laudo",
       "nome": "Laudo psicológico",
-      "finalidade": "A preencher a partir da resolução vigente",
-      "estrutura": [],
-      "quando_usar": "A preencher",
-      "exemplos": [ { "adequado": "", "problematico": "", "comentario": "" } ],
-      "a_confirmar": true
+      "artigo": "Art. 13",
+      "resulta_de_avaliacao": true,
+      "resumo": "Apresenta o resultado de um processo de avaliação psicológica.",
+      "finalidade": "Apresentar o resultado de um processo de avaliação psicológica, com a finalidade de subsidiar decisões relacionadas ao contexto em que surgiu a demanda. Limita-se a fornecer as informações necessárias e relacionadas à demanda (art. 13, caput e inciso IV).",
+      "estrutura": [
+        "Identificação: título, pessoa ou instituição atendida, solicitante, finalidade, autora(or) com inscrição no CRP (art. 13, § 2º)",
+        "Descrição da demanda: o que motivou a avaliação e quem forneceu as informações (art. 13, § 3º)",
+        "Procedimento: recursos utilizados, pessoas ouvidas, número de encontros e tempo de duração do processo (art. 13, § 4º)",
+        "Análise: exposição descritiva, metódica e objetiva dos dados colhidos (art. 13, § 5º)",
+        "Conclusão: conclusões a partir da análise, com encaminhamentos e orientações (art. 13, § 6º)",
+        "Referências: fontes científicas utilizadas, de preferência em nota de rodapé (art. 13, § 7º)"
+      ],
+      "quando_usar": "Quando houve um processo de avaliação psicológica e o resultado precisa ser comunicado por escrito a quem solicitou ou à pessoa avaliada.",
+      "atencao": "A análise não traz afirmações sem sustentação em fatos ou teorias (art. 13, § 5º, III). As conclusões consideram a natureza dinâmica e não cristalizada do que foi avaliado (art. 13, § 6º).",
+      "exemplos": [
+        {
+          "problematico": "Os testes mostraram que L. tem déficit de atenção.",
+          "adequado": "Na escala de autorrelato, L. descreveu sintomas de desatenção acima da média da amostra normativa. Na bateria de atenção, seu desempenho ficou na faixa média nas três medidas. A divergência entre as duas fontes é discutida na conclusão.",
+          "comentario": "A primeira versão não diz qual instrumento, o que ele mede nem como o resultado sustenta a afirmação. A segunda identifica a fonte de cada dado e separa relato de desempenho."
+        }
+      ]
+    },
+    {
+      "id": "parecer",
+      "nome": "Parecer psicológico",
+      "artigo": "Art. 14",
+      "resulta_de_avaliacao": false,
+      "resumo": "Responde a uma consulta sobre uma questão ou sobre outro documento.",
+      "finalidade": "Apresentar uma análise técnica, respondendo a uma questão-problema do campo psicológico ou a documentos psicológicos questionados. É a resposta a uma consulta, e seu resultado pode ser indicativo ou conclusivo (art. 14, caput e incisos I e III).",
+      "estrutura": [
+        "Identificação, com a titulação que comprove conhecimento específico no assunto",
+        "Descrição da demanda",
+        "Análise",
+        "Conclusão",
+        "Referências (art. 14, § 1º)"
+      ],
+      "quando_usar": "Quando alguém consulta um especialista sobre uma questão técnica ou pede a apreciação de um documento produzido por outra(o) psicóloga(o).",
+      "atencao": "O parecer não resulta de avaliação nem de intervenção psicológica (art. 14, inciso IV). Exige conhecimento específico e competência no assunto (art. 14, inciso II).",
+      "exemplos": []
     }
   ],
-  "frases": [],
-  "checklist": []
+  "frases": [
+    {
+      "problematica": "L. é desatenta.",
+      "descritiva": "L. relata dificuldade para manter a leitura por mais de vinte minutos nas tarefas do curso.",
+      "comentario": "O rótulo atribui um traço à pessoa. A descrição diz o que acontece, em que tarefa e segundo quem."
+    },
+    {
+      "problematica": "O teste comprovou o diagnóstico.",
+      "descritiva": "O escore na escala de sintomas ficou acima da média da amostra normativa, dado que foi considerado junto com a entrevista e com o relato da mãe.",
+      "comentario": "Um escore não comprova diagnóstico. A versão descritiva situa o dado entre as outras fontes."
+    },
+    {
+      "problematica": "A paciente nunca conseguirá concluir o curso sem tratamento.",
+      "descritiva": "No momento da avaliação, as dificuldades relatadas interferem na conclusão das tarefas do curso. Recomenda-se reavaliar após as mudanças de rotina sugeridas.",
+      "comentario": "A primeira versão fixa um prognóstico que nenhum procedimento sustenta. A segunda delimita o momento e prevê reavaliação."
+    },
+    {
+      "problematica": "A mãe é superprotetora e contribuiu para o quadro.",
+      "descritiva": "Segundo a mãe, L. sempre contou com ajuda dela para organizar os horários de estudo durante a vida escolar.",
+      "comentario": "A primeira versão julga uma pessoa que não foi avaliada e afirma causa. A segunda registra o que foi dito e por quem."
+    },
+    {
+      "problematica": "L. tem QI normal, portanto não tem problema de atenção.",
+      "descritiva": "O desempenho de L. no teste de raciocínio ficou na faixa média. A atenção foi avaliada por outros procedimentos, descritos a seguir.",
+      "comentario": "O instrumento de raciocínio não mede atenção. A versão descritiva mantém cada conclusão dentro do que o procedimento avalia."
+    },
+    {
+      "problematica": "Fica evidente que L. exagera os sintomas.",
+      "descritiva": "O relato de sintomas de L. é mais intenso do que o desempenho observado nas tarefas de atenção. Essa divergência pode refletir o período de sobrecarga em que a avaliação ocorreu.",
+      "comentario": "A primeira versão atribui intenção sem dado. A segunda descreve a divergência e oferece uma leitura como hipótese."
+    },
+    {
+      "problematica": "Os resultados foram normais.",
+      "descritiva": "Nas três medidas de atenção, os escores ficaram na faixa média do instrumento, com intervalos de confiança dentro dessa faixa.",
+      "comentario": "\"Normal\" não diz em relação a quê. A versão descritiva informa a medida, a faixa e a imprecisão."
+    },
+    {
+      "problematica": "L. apresenta ansiedade devido ao excesso de trabalho.",
+      "descritiva": "L. relata sintomas de ansiedade que se intensificaram no período em que passou a conciliar estágio, aulas e trabalho noturno.",
+      "comentario": "A primeira versão afirma causa. A segunda descreve a relação no tempo, que é o que os dados permitem dizer."
+    }
+  ],
+  "checklist": [
+    { "texto": "O tipo de documento corresponde ao que foi feito: houve processo de avaliação psicológica (laudo ou atestado) ou não (declaração, relatório, parecer).", "artigo": "Arts. 8º a 14" },
+    { "texto": "O documento traz todos os itens da estrutura do seu tipo, identificados.", "artigo": "Art. 13, § 1º (laudo)" },
+    { "texto": "A identificação informa pessoa atendida, solicitante, finalidade e autora(or) com inscrição no CRP.", "artigo": "Art. 13, § 2º" },
+    { "texto": "O procedimento cita as pessoas ouvidas, o número de encontros e o tempo de duração do processo.", "artigo": "Art. 13, § 4º, I" },
+    { "texto": "A análise traz só o que é necessário para responder à demanda, sem descrição literal das sessões.", "artigo": "Art. 13, § 5º, I e II" },
+    { "texto": "Nenhuma afirmação está sem sustentação em fatos ou teorias, e cada dado tem a fonte identificada.", "artigo": "Art. 13, § 5º, III" },
+    { "texto": "O texto está na terceira pessoa, em linguagem precisa, e considera a natureza dinâmica e não definitiva do que foi avaliado.", "artigo": "Art. 5º, § 3º; art. 6º, §§ 1º e 4º" },
+    { "texto": "O sigilo foi resguardado: não há informação sobre terceiros nem conteúdo sem relação com a demanda.", "artigo": "Art. 5º, § 6º" },
+    { "texto": "As referências utilizadas estão informadas.", "artigo": "Art. 13, § 7º" },
+    { "texto": "O último parágrafo indica o prazo de validade do conteúdo.", "artigo": "Art. 17" },
+    { "texto": "As laudas estão numeradas e rubricadas, com assinatura na última página.", "artigo": "Art. 5º, § 8º" },
+    { "texto": "Há entrevista devolutiva prevista e protocolo de entrega para assinatura de quem recebe.", "artigo": "Art. 18; art. 16, § 1º" }
+  ]
 }

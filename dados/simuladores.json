@@ -40,7 +40,6 @@
     },
     "ic_a": "a"
   },
-
   "planejamento": {
     "instrucao": "Leia a demanda. Marque as hipóteses que o plano deve investigar e escolha os procedimentos, sem passar do limite de sessões. Depois, veja a cobertura do seu plano e compare com o plano de referência.",
     "hipoteses_titulo": "Hipóteses a investigar",
@@ -78,7 +77,6 @@
     "nota_referencia": "O plano de referência é um plano possível, e não o único. Leve as diferenças para a supervisão.",
     "refazer": "Refazer o plano"
   },
-
   "anamnese": {
     "instrucao": "Conduza a entrevista. A cada fala, escolha a próxima pergunta. Não é possível voltar: como em uma entrevista, cada pergunta feita ocupa o lugar de outra. Ao final, veja o que foi coletado.",
     "entrevista_com": "Entrevista com",
@@ -96,16 +94,24 @@
     "outras_titulo": "Outras informações que não apareceram",
     "tipos_titulo": "Tipos de pergunta que você fez",
     "tipos": {
-      "aberta": { "nome": "Aberta", "explicacao": "Convida a pessoa a descrever com as próprias palavras. Costuma trazer mais informação e menos influência do entrevistador." },
-      "fechada": { "nome": "Fechada", "explicacao": "Pede uma resposta curta. Serve para precisar um dado, e rende pouco quando o assunto ainda não foi explorado." },
-      "indutiva": { "nome": "Indutiva", "explicacao": "Sugere a resposta. A pessoa tende a concordar, e o dado obtido deixa de ser confiável." }
+      "aberta": {
+        "nome": "Aberta",
+        "explicacao": "Convida a pessoa a descrever com as próprias palavras. Costuma trazer mais informação e menos influência do entrevistador."
+      },
+      "fechada": {
+        "nome": "Fechada",
+        "explicacao": "Pede uma resposta curta. Serve para precisar um dado, e rende pouco quando o assunto ainda não foi explorado."
+      },
+      "indutiva": {
+        "nome": "Indutiva",
+        "explicacao": "Sugere a resposta. A pessoa tende a concordar, e o dado obtido deixa de ser confiável."
+      }
     },
     "indutivas_titulo": "Perguntas indutivas que você fez",
     "indutivas_nenhuma": "Você não fez perguntas indutivas.",
     "transcricao_titulo": "Transcrição",
     "refazer": "Refazer a entrevista"
   },
-
   "caso": {
     "instrucao": "Percorra o caso etapa por etapa. Ao fim de cada etapa, escreva a hipótese que você sustenta naquele ponto. No final, compare a evolução das suas hipóteses com uma trajetória de referência e gere o PDF para a supervisão.",
     "privacidade": "O que você escreve fica só nesta página. Nada é enviado nem salvo. Se a página for fechada ou recarregada, o texto se perde.",
@@ -145,5 +151,70 @@
     "conclusao": "Conclusão de referência",
     "limites": "Limites",
     "nota_supervisao": "Leve este material para a supervisão. A trajetória de referência é um apoio para a discussão e não substitui o julgamento do supervisor."
+  },
+  "laudo": {
+    "instrucao": "Leia o laudo como se fosse revisá-lo antes da assinatura. Marque os parágrafos que têm problema e escolha o tipo de erro de cada um. Depois, veja o gabarito comentado.",
+    "norma": "As regras citadas no gabarito são da Resolução CFP n.º 6, de 29 de março de 2019. Confira a vigência antes de usar em um documento real.",
+    "tipos_titulo": "Tipos de erro",
+    "marcar": "Este parágrafo tem problema",
+    "escolha_tipo": "Tipo de erro",
+    "sem_tipo": "Escolha o tipo",
+    "marcados": "Parágrafos marcados:",
+    "falta_tipo": "Escolha o tipo de erro de todos os parágrafos marcados.",
+    "ver_gabarito": "Ver gabarito",
+    "gabarito_titulo": "Gabarito comentado",
+    "placar": {
+      "acertos": "problemas encontrados",
+      "nao_percebidos": "Problemas não percebidos",
+      "falsos_alarmes": "Falsos alarmes",
+      "de": "de"
+    },
+    "rotulos": {
+      "acerto": "Problema encontrado",
+      "acerto_tipo_diferente": "Problema encontrado, com outro tipo",
+      "nao_percebido": "Problema não percebido",
+      "falso_alarme": "Falso alarme",
+      "adequado": "Adequado"
+    },
+    "seu_tipo": "Você classificou como",
+    "tipo_gabarito": "Tipo no gabarito",
+    "explicacao": "Por quê",
+    "correcao": "Correção sugerida",
+    "falso_alarme_texto": "Este parágrafo não tem problema plantado. Se você ainda vê um problema nele, leve para a supervisão.",
+    "refazer": "Refazer",
+    "tipos": {
+      "conclusao_sem_base": {
+        "nome": "Conclusão sem base no procedimento",
+        "explicacao": "Afirma algo que nenhum procedimento da avaliação sustenta."
+      },
+      "instrumento_inadequado": {
+        "nome": "Instrumento inadequado",
+        "explicacao": "Usa um instrumento que não serve à idade da pessoa ou à finalidade pretendida."
+      },
+      "linguagem_determinista": {
+        "nome": "Linguagem determinista",
+        "explicacao": "Trata o resultado como definitivo ou fixa um prognóstico."
+      },
+      "rotulo_sem_descricao": {
+        "nome": "Rótulo no lugar de descrição",
+        "explicacao": "Atribui um traço ou um julgamento à pessoa sem descrever o que foi observado."
+      },
+      "quebra_de_sigilo": {
+        "nome": "Quebra de sigilo",
+        "explicacao": "Expõe informação sigilosa, da pessoa avaliada ou de terceiros."
+      },
+      "informacao_desnecessaria": {
+        "nome": "Informação desnecessária à demanda",
+        "explicacao": "Traz conteúdo que não ajuda a responder à pergunta de avaliação."
+      },
+      "sem_limites": {
+        "nome": "Ausência de limites da avaliação",
+        "explicacao": "Não delimita validade, finalidade ou alcance das conclusões."
+      },
+      "estrutura_fora_da_norma": {
+        "nome": "Estrutura fora da norma",
+        "explicacao": "Falta um item ou uma informação que a resolução exige no documento."
+      }
+    }
   }
 }

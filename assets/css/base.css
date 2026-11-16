@@ -336,6 +336,36 @@ textarea{
 .lado-a-lado .ref{background:var(--paper);border:1px solid var(--line)}
 .texto-livre{white-space:pre-wrap;overflow-wrap:anywhere}
 
+/* ======= Guia de documentos e laudo com erros ======= */
+.titulo-secao{font-family:var(--font-display);font-weight:600;font-size:20px;margin-top:8px}
+.etiqueta.neutra{color:var(--teal);background:var(--teal-soft);border-color:#BFD6D1}
+.lado-a-lado .problema{background:var(--erro-soft);border:1px solid #EBC1C1}
+table.medidas td.longo{white-space:normal}
+.termo-ficha .fontes{padding-left:20px}
+
+select{
+  font:inherit;min-height:44px;padding:8px 10px;max-width:100%;
+  border:1px solid #9FB0AC;border-radius:10px;background:var(--card);color:var(--ink);
+}
+details.tipos-erro summary{cursor:pointer;font-weight:600;min-height:28px}
+.laudo-folha h2{margin-top:10px;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal)}
+.paragrafo-laudo{
+  border:1px solid var(--line);border-radius:10px;padding:12px 14px;
+  display:flex;flex-direction:column;gap:8px;
+}
+.paragrafo-laudo.marcado{border-color:var(--alerta);background:var(--alerta-soft)}
+.texto-laudo{font-size:15px}
+.marca{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:13.5px;font-weight:600;color:var(--ink-soft);cursor:pointer;align-self:flex-start}
+.marca input{width:20px;height:20px;accent-color:var(--alerta)}
+.paragrafo-laudo.gab.acerto{border-color:var(--teal);background:var(--teal-soft)}
+.paragrafo-laudo.gab.acerto_tipo_diferente{border-color:var(--teal)}
+.paragrafo-laudo.gab.nao_percebido{border-color:var(--erro);background:var(--erro-soft)}
+.paragrafo-laudo.gab.falso_alarme{border-color:#E9D3A0;background:var(--alerta-soft)}
+.gab .veredito{color:var(--ink-soft)}
+.gab.acerto .veredito,.gab.acerto_tipo_diferente .veredito{color:var(--teal)}
+.gab.nao_percebido .veredito{color:var(--erro)}
+.gab.falso_alarme .veredito{color:var(--alerta)}
+
 /* ======= Tela estreita: coluna única ======= */
 @media (max-width:720px){
   .app{padding:32px 16px 70px;gap:26px}
@@ -357,8 +387,10 @@ textarea{
   table.medidas td{display:flex;justify-content:space-between;gap:12px;padding:3px 0;font-size:14px}
   table.medidas td::before{content:attr(data-rotulo);color:var(--ink-soft);font-weight:400}
   table.medidas tr.em-foco td{font-weight:600}
+  table.medidas td.longo{flex-direction:column;gap:2px}
 
   .lado-a-lado{grid-template-columns:1fr}
+  select{width:100%}
   .fala{max-width:96%}
 
   /* Definição do termo do glossário: fixa no rodapé da tela. */
@@ -378,6 +410,8 @@ textarea{
   .termo-ficha{box-shadow:none;break-inside:avoid}
   .cartao{box-shadow:none}
   .linha-tempo > li,.cobertura > li,.resumo-lista li{break-inside:avoid}
+  .paragrafo-laudo{break-inside:avoid}
+  details.tipos-erro{display:none}
   .termo-ficha[hidden]{display:none !important}
   .gl-termo{text-decoration:none}
   .tool,.aviso{box-shadow:none;break-inside:avoid}
